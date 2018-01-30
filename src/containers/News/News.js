@@ -66,32 +66,52 @@ class News extends Component {
 
     render() {
         const news = this.state.news.map((item,i) => {
+          let type;
           let original_name;
           let name;
+          let description;
 
           if(item.original_name) {
+            type = "Seriale";
             original_name = item.original_name;
             name = item.name;
           } else {
+            type = "W kinach";
             original_name = item.original_title;
             name = item.title;
+            description = "Już w kinach!";
           }
 
           return (
-            <div key={i} className={classes.News}>
-                <div className={classes.Content}>
-                    <h2>{original_name}</h2>
-                    <h1>{name}</h1>
-                </div>
-                <img src={['https://image.tmdb.org/t/p/original',item.backdrop_path].join('')} alt="" />
+            <div key={i} className={classes.News} >
+              <div className={classes.Content}>
+                  <h3>{type}</h3>
+                  <h2>{original_name}</h2>
+                  <h1>{name}</h1>
+              </div>
+              <img src={['https://image.tmdb.org/t/p/original',item.backdrop_path].join('')} alt="" />
             </div>
           )
         });
 
+        const NewsSettings = {
+          numberOfSlidesToShow: 1,
+        }
+
+        const ExampleSettings = {
+          numberOfSlidesToShow: 2,
+        }
+
         return (
-          <Carousel>
+          <div>
+          <Carousel settings={NewsSettings}>
             {news}
           </Carousel>
+
+          <Carousel settings={ExampleSettings}>
+            {news}
+          </Carousel>
+          </div>
         );
     }
 }

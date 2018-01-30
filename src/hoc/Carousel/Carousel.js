@@ -14,19 +14,21 @@ class Carousel extends Component {
             moveTouchX: null,
             timer: null,
             timeToScroll: 800,
-            numOfSlidesToScroll: 1,
-            numOfSlides: 0,
-            currentSlide: 0,
-            disabledButtons: false
+            numberOfSlidesToShow: 1,
+            currentView: 0,
+            disabledButtons: false,
+            dataToShow: null
         }
     }
 
     componentDidMount() {
         window.addEventListener('resize', this.onResize);
+        let dataToShow = this.renderSlides(this.props.children);
 
         this.setState({
             timer: new Timer(this.handleRightNav, 5000),
-            numOfSlides: this.props.children.length
+            dataToShow,
+            numberOfSlidesToShow: this.props.settings.numberOfSlidesToShow
         });
     }
 
@@ -55,18 +57,50 @@ class Carousel extends Component {
 
     onResize = () => {
         const { carouselViewport } = this.refs;
-        const { currentSlide } = this.state;
+        const { currentView, timeToScroll } = this.state;
 
-        carouselViewport.scrollLeft = carouselViewport.offsetWidth * currentSlide;
+        carouselViewport.scrollLeft = carouselViewport.offsetWidth * currentView;
+        scrollTo({
+            element: carouselViewport, 
+            to: carouselViewport.offsetWidth * currentView, 
+            duration: timeToScroll, 
+            scrollDirection: 'scrollLeft'
+        });
+    }
+
+    ArrayShuffle = (direction) => {
+        const { carouselViewport } = this.refs;
+        let { currentView, dataToShow } = this.state;
+
+        switch(direction) {
+            case 'left':
+                dataToShow.unshift(dataToShow.pop());
+                carouselViewport.scrollLeft = carouselViewport.scrollLeft + carouselViewport.offsetWidth;
+                break;
+            case 'right':
+                if(currentView > 0) {
+                    dataToShow.push(dataToShow.shift())
+                    carouselViewport.scrollLeft = carouselViewport.scrollLeft - carouselViewport.offsetWidth;
+                } else currentView++;
+                break;
+            default:
+        }
+
+        this.setState({
+            dataToShow,
+            currentView
+        })
     }
 
     handleLeftNav = (e) => {
-
         const { carouselViewport } = this.refs;
         const { timeToScroll } = this.state;
+        let { timer } = this.state;
+
+        this.ArrayShuffle('left');
+
         const newPosition = carouselViewport.scrollLeft - carouselViewport.offsetWidth;
 
-        let { timer } = this.state;
         timer.reset(5000);
 
         this.setState({
@@ -86,23 +120,17 @@ class Carousel extends Component {
             duration: timeToScroll, 
             scrollDirection: 'scrollLeft'
         });
-
-        let { currentSlide } = this.state;
-        if(currentSlide > 0) {
-            currentSlide--;
-            
-            this.setState({
-                currentSlide
-            })
-        }
     }
 
     handleRightNav = (e) => {
         const { carouselViewport } = this.refs;
         const { timeToScroll } = this.state;
-        const newPosition = carouselViewport.scrollLeft + carouselViewport.offsetWidth;
-
         let { timer } = this.state;
+
+        this.ArrayShuffle('right');
+
+        const newPosition = carouselViewport.scrollLeft + carouselViewport.offsetWidth;
+        
         timer.reset(5000);
 
         this.setState({
@@ -122,33 +150,24 @@ class Carousel extends Component {
             duration: timeToScroll, 
             scrollDirection: 'scrollLeft'
         });
-
-        let { currentSlide } = this.state;
-        const { numOfSlides } = this.state;
-        if(currentSlide < numOfSlides-1) {
-            currentSlide++;
-
-            this.setState({
-                currentSlide
-            })
-        }
     }
 
     renderSlides(data) {
         return data.map((item,i) => 
             <Slide key={i}
                 item={item}
+                widthOfSlide={[100 / this.props.settings.numberOfSlidesToShow,'%'].join('')}
             />
         )
     }
 
     render() {
-        const { disabledButtons } = this.state;
+        const { dataToShow, disabledButtons } = this.state;
         return (
             <div className={classes.CarouselContainer} onTouchStart={this.touchStart} onTouchEnd={this.touchEnd} onTouchMove={this.touchMove} >
                 <button onClick={this.handleLeftNav} className={[classes.CarouselNav, classes.CarouselLeftNav].join(' ')} disabled={disabledButtons}><i className="fa fa-chevron-left" aria-hidden="true"></i></button>
                 <div className={classes.CarouselViewport} ref="carouselViewport">
-                    {this.renderSlides(this.props.children)}
+                    {dataToShow}
                 </div>
                 <button onClick={this.handleRightNav} className={[classes.CarouselNav, classes.CarouselRightNav].join(' ')} disabled={disabledButtons}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
             </div>

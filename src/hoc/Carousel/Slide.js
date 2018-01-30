@@ -2,9 +2,9 @@ import React from 'react';
 
 import classes from './Slide.css';
 
-const Slide = ({ item }) => {
+const Slide = ({ item, widthOfSlide }) => {
     return (
-        <div className={classes.Slide}>
+        <div className={classes.Slide} style={{width: widthOfSlide}}>
             {item}
         </div>
     );
