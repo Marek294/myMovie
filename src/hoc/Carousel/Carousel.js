@@ -14,7 +14,6 @@ class Carousel extends Component {
             moveTouchX: null,
             timer: null,
             timeToScroll: 800,
-            numberOfSlidesToShow: 1,
             currentView: 0,
             disabledButtons: false,
             dataToShow: null
@@ -27,8 +26,7 @@ class Carousel extends Component {
 
         this.setState({
             timer: new Timer(this.handleRightNav, 5000),
-            dataToShow,
-            numberOfSlidesToShow: this.props.settings.numberOfSlidesToShow
+            dataToShow
         });
     }
 
@@ -156,7 +154,6 @@ class Carousel extends Component {
         return data.map((item,i) => 
             <Slide key={i}
                 item={item}
-                widthOfSlide={[100 / this.props.settings.numberOfSlidesToShow,'%'].join('')}
             />
         )
     }

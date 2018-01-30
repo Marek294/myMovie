@@ -69,7 +69,6 @@ class News extends Component {
           let type;
           let original_name;
           let name;
-          let description;
 
           if(item.original_name) {
             type = "Seriale";
@@ -79,7 +78,6 @@ class News extends Component {
             type = "W kinach";
             original_name = item.original_title;
             name = item.title;
-            description = "Już w kinach!";
           }
 
           return (
@@ -94,24 +92,10 @@ class News extends Component {
           )
         });
 
-        const NewsSettings = {
-          numberOfSlidesToShow: 1,
-        }
-
-        const ExampleSettings = {
-          numberOfSlidesToShow: 2,
-        }
-
         return (
-          <div>
-          <Carousel settings={NewsSettings}>
+          <Carousel>
             {news}
           </Carousel>
-
-          <Carousel settings={ExampleSettings}>
-            {news}
-          </Carousel>
-          </div>
         );
     }
 }
