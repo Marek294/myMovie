@@ -1,0 +1,45 @@
+.CarouselContainer {
+    display: flex;
+    position: relative;
+}
+
+.CarouselViewport {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.CarouselNav {
+    background: transparent;
+    border: none;
+    padding: 0;
+    top: 50%;
+    position: absolute;
+    z-index: 100;
+}
+
+.CarouselNav:hover,
+.CarouselNav:hover i {
+    cursor: pointer;
+    color: rgba(255,255,255,1);
+}
+
+.CarouselNav i {
+    color: rgba(255,255,255,0.3);
+    font-size: 4vw;
+    transition: color 500ms;
+}
+
+.CarouselNav:active {
+    border: none;
+    padding: 0;
+}
+
+.CarouselLeftNav {
+    left: 3%;
+}
+
+.CarouselRightNav {
+    right: 3%;
+}

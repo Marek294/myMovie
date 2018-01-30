@@ -1,0 +1,55 @@
+.News {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background: linear-gradient(to left, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 60%);
+}
+
+.News img {
+    width: 100%;
+    z-index: -1;
+}
+
+.Container {
+    margin: 0 auto;
+  padding: 40px;
+  width: 80%;
+  color: #333;
+  background: #419be0;
+  min-height: 0;
+  min-width: 0;
+}
+
+.Content {
+    width: 50vw; 
+    position: absolute;
+    top: 0;
+    padding: 8vw 10vw;
+}
+
+.Content h1 {
+    font-weight: 900;
+    font-size: 3vw;
+    margin: 0;
+    width: 50%;
+}
+
+.Content h2 {
+    font-weight: 900;
+    font-size: 1.5vw;
+    margin: 0;
+}
+
+.Buttons {
+    top: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Buttons button {
+    margin: 0 3vw;
+}
+  
+  
