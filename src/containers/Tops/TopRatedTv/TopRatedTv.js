@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import Carousel from '../../hoc/PosterCarousel/Carousel';
+import Carousel from '../../../hoc/PosterCarousel/Carousel';
 
-import classes from './TopRatedTv.css';
+import classes from '../TopSection.css';
 
 class TopRatedTv extends Component {
     state = {
         topRated: [
             {
+                id: 60625,
                 original_name: "Rick and Morty",
                 name: " Rick i Morty",
                 vote_average: 8.5,
@@ -14,6 +15,7 @@ class TopRatedTv extends Component {
                 poster_path: "/qJdfO3ahgAMf2rcmhoqngjBBZW1.jpg"
               },
               {
+                id: 66732,
                 original_name: "Stranger Things",
                 name: "Stranger Things",
                 vote_average: 8.4,
@@ -21,6 +23,7 @@ class TopRatedTv extends Component {
                 poster_path: "/esKFbCWAGyUUNshT5HE5BIpvbcL.jpg"
               },
               {
+                id: 1396,
                 original_name: "Breaking Bad",
                 name: "Breaking Bad",
                 vote_average: 8.3,
@@ -28,6 +31,7 @@ class TopRatedTv extends Component {
                 poster_path: "/1yeVJox3rjo2jBKrrihIMj7uoS9.jpg"
               },
               {
+                id: 1438,
                 original_name: "The Wire",
                 name: "Prawo ulicy",
                 vote_average: 8.2,
@@ -35,6 +39,7 @@ class TopRatedTv extends Component {
                 poster_path: "/z66ZITnwFkt1Ktg5nKlmauMdW0B.jpg"
               },
               {
+                id: 19885,
                 original_name: "Sherlock",
                 name: "Sherlock",
                 vote_average: 8.2,
@@ -42,6 +47,7 @@ class TopRatedTv extends Component {
                 overview: "Dr Watson (Martin Freeman) jest lekarzem i weteranem wojennym. Pewnego dnia poznaje Sherlocka Holmesa (Benedict Cumberbatch), który rozwiązuje zagadki kryminalne sposobem dedukcji. \"Sherlock\" to uwspółcześniona wersja przygód jednego z najsłynniejszych detektywów. Akcja toczy się w teraźniejszym Londynie.",
               },
               {
+                id: 1437,
                 original_name: "Firefly",
                 name: "Firefly",
                 vote_average: 8.2,
@@ -49,6 +55,7 @@ class TopRatedTv extends Component {
                 overview: "Kapitan Malcolm Reynolds wraz załogą statku Serenity przemierza galaktykę, przemycając ładunki lub przewożąc pasażerów. Sytuacja komplikuje się, gdy zabiera na pokład parę wyjętych spod prawa uciekinierów.",
               },
               {
+                id: 1398,
                 original_name: "The Sopranos",
                 name: "Rodzina Soprano",
                 vote_average: 8.2,
@@ -56,6 +63,7 @@ class TopRatedTv extends Component {
                 overview: "Tony Soprano, mąż i ojciec dwójki dzieci, a zarazem ważny członek mafii z New Jersey, cierpi na tajemnicze ataki paniki. Kiedy sytuacja zaczyna go przerastać, postanawia rozpocząć terapię u psychiatry.",
               },
               {
+                id: 60622,
                 original_name: "Fargo",
                 name: "Fargo",
                 vote_average: 8.2,
@@ -63,6 +71,7 @@ class TopRatedTv extends Component {
                 poster_path: "/sskPK2HjkFaxam10eg0Hk1A3I2m.jpg"
               },
               {
+                id: 42009,
                 original_name: "Black Mirror",
                 name: "Czarne lustro",
                 vote_average: 8.2,
@@ -70,6 +79,7 @@ class TopRatedTv extends Component {
                 poster_path: "/vGrS1mzlSHQQdOcmqH1zlE2iViY.jpg"
               },
               {
+                id: 63247,
                 original_name: "Westworld",
                 name: "Westworld",
                 vote_average: 8.1,
@@ -77,6 +87,7 @@ class TopRatedTv extends Component {
                 poster_path: "/x2WKIbiwhLoWgLFbT2I0Gwq8U1J.jpg"
               },
               {
+                id: 1399,
                 original_name: "Game of Thrones",
                 name: "Gra o Tron",
                 vote_average: 8.1,
@@ -84,6 +95,7 @@ class TopRatedTv extends Component {
                 overview: "Siedem rodzin szlacheckich walczy o panowanie nad ziemiami krainy Westeros. Polityczne i seksualne intrygi są na porządku dziennym. Pierwszorzędne role wiodą rodziny: Stark, Lannister i Baratheon. Robert Baratheon, król Westeros, prosi swojego starego przyjaciela, Eddarda Starka, aby służył jako jego główny doradca. Eddard, podejrzewając, że jego poprzednik na tym stanowisku został zamordowany, przyjmuje propozycję, aby dogłębnie zbadać sprawę. Okazuje się, że przejęcie tronu planuje kilka rodzin. Lannisterowie, familia królowej, staje się podejrzana o podstępne knucie spisku. Po drugiej stronie morza, pozbawieni władzy ostatni przedstawiciele poprzednio rządzącego rodu, Targaryenów, również planują odzyskać kontrolę nad królestwem. Narastający konflikt pomiędzy rodzinami, do którego włączają się również inne rody, prowadzi do wojny. W międzyczasie na dalekiej północy budzi się starodawne zło. W chaosie pełnym walk i konfliktów tylko grupa wyrzutków zwana Nocną Strażą stoi pomiędzy królestwem ludzi, a horrorem kryjącym się poza nim.",
               },
               {
+                id: 1425,
                 original_name: "House of Cards",
                 name: "House of Cards",
                 vote_average: 8.1,
@@ -91,6 +103,7 @@ class TopRatedTv extends Component {
                 poster_path: "/tpj8wyeAVgDakXchERIzYUuwln9.jpg"
               },
               {
+                id: 4087,
                 original_name: "The X-Files",
                 name: "Z Archiwum X",
                 vote_average: 8.1,
@@ -98,6 +111,7 @@ class TopRatedTv extends Component {
                 overview: "Serial opowiada o nietypowej parze agentów FBI. Fox Mulder (David Duchovny) i Dana Scully (Gillian Anderson) prowadzą tytułowe Archiwum X, komórkę Federalnego Biura Śledczego, do której trafiają wszystkie sprawy nie dające się wyjaśnić na drodze konwencjonalnego rozumowania. Mulder głęboko wierzy w istnienie istot pozaziemskich i innych niewytłumaczalnych zjawisk, będących przedmiotami ich śledztw. Praca w Archiwum X jest dla niego próbą wyjaśnienia zagadki zaginięcia swojej siostry, która – jak twierdzi Mulder – została porwana przez obcych. Scully natomiast, jako naukowiec, jest bardzo sceptycznie nastawiona do wszelkich badanych przez nich spraw, choć w toku wydarzeń sama także zaczyna wierzyć w paranormalne zjawiska. Z czasem do Muldera i Scully dołączają agenci John Doggett (Robert Patrick) i Monica Reyes (Annabeth Gish), tworząc drugi duet pracowników Archiwum X.",
               },
               {
+                id: 1408,
                 original_name: "House",
                 name: "Dr House",
                 vote_average: 8.1,
@@ -105,6 +119,7 @@ class TopRatedTv extends Component {
                 poster_path: "/pzAtg9rD4ybxqmzr4jqtnQs2qOF.jpg"
               },
               {
+                id: 46648,
                 original_name: "True Detective",
                 name: "Detektyw",
                 vote_average: 8.1,
@@ -112,6 +127,7 @@ class TopRatedTv extends Component {
                 poster_path: "/qAGXloFpjKEzYUIK3cjBSuVtpBw.jpg"
               },
               {
+                id: 60059,
                 original_name: "Better Call Saul",
                 name: "Zadzwoń do Saula",
                 vote_average: 8.1,
@@ -119,6 +135,7 @@ class TopRatedTv extends Component {
                 poster_path: "/b6tpspJMOauCQqud0KOcwNSq3F3.jpg"
               },
               {
+                id: 615,
                 original_name: "Futurama",
                 name: "Futurama",
                 vote_average: 8.1,
@@ -126,6 +143,7 @@ class TopRatedTv extends Component {
                 poster_path: "/iN0LOeE2JnJpIy4jF7imUjO6jwn.jpg"
               },
               {
+                id: 1705,
                 original_name: "Fringe",
                 name: "Fringe: Na granicy światów",
                 vote_average: 8,
@@ -133,6 +151,7 @@ class TopRatedTv extends Component {
                 overview: "Agentka FBI Olivia Dunham wraz z genialnym naukowcem Walterem Bishopem i jego synem Peterem tworzą zespół prowadzący śledztwa dotyczące serii zagadkowych zdarzeń.",
               },
               {
+                id: 1920,
                 original_name: "Twin Peaks",
                 name: "Miasteczko Twin Peaks",
                 vote_average: 8,
@@ -140,6 +159,7 @@ class TopRatedTv extends Component {
                 overview: "W sennym i spokojnym miasteczku zostaje odnalezione ciało uczennicy, Laury Palmer.",
               },
               {
+                id: 1405,
                 original_name: "Dexter",
                 name: "Dexter",
                 vote_average: 8,

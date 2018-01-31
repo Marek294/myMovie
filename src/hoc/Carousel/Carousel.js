@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Slide from './Slide';
 
 import classes from './Carousel.css';
-import scrollTo from './scrollToAnimate';
+import scrollTo from '../../utils/scrollToAnimate';
 import Timer from './timer';
 
 class Carousel extends Component {
