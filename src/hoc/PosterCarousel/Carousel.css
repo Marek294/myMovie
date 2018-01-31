@@ -1,6 +1,7 @@
 .CarouselContainer {
-    display: flex;
     position: relative;
+    width: 100%;
+    height: 32vw;
 }
 
 .CarouselContainer .CarouselNav {
@@ -17,6 +18,7 @@
     overflow-y: hidden;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    height: 100%;
     
     -moz-user-select: -moz-none;
    -khtml-user-select: none;
@@ -25,13 +27,21 @@
    user-select: none;
 }
 
+.CarouselViewport:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
 .CarouselNav {
     background: transparent;
     border: none;
     padding: 0;
-    top: 50%;
     position: absolute;
+    top: 0;
     z-index: 100;
+    height: 100%;
 }
 
 .CarouselNav:hover,
@@ -42,7 +52,7 @@
 
 .CarouselNav i {
     color: rgba(255,255,255,0.3);
-    font-size: 4vw;
+    font-size: 2vw;
     transition: color 500ms;
 }
 
@@ -52,9 +62,9 @@
 }
 
 .CarouselLeftNav {
-    left: 3%;
+    left: -3%;
 }
 
 .CarouselRightNav {
-    right: 3%;
+    right: -3%;
 }

@@ -1,31 +1,32 @@
 .Container {
     margin: 0px 4vw;
-    transform: translateY(-50%);
-    width: 100%;
+    transform: translateY(-60%);
 }
 
 .Container h1 {
+    position: absolute;
     font-weight: 900;
     font-size: 2vw;
 }
 
 .Posters {
     display: flex;
-    height: 20vw;
+    height: 23vw;
+    width: 100%;
 }
 
 .Item {
     margin: 5px;
-    width: 10vw;
-    height: 15vw;
+    /* width: 10vw;
+    height: 15vw; */
     transition: all 500ms;
     position: relative;
 }
 
-.Item:hover {
+/* .Item:hover {
     width: 15vw;
     height: 22vw;
-}
+} */
 
 .Item img {
     width: 100%;
