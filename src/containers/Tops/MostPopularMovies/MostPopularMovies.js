@@ -181,7 +181,7 @@ class MostPopularMovies extends Component {
 
         return (
             <div className={classes.Container}>
-                <h1>Najbardziej popularne seriale</h1>
+                <h1>Najbardziej popularne filmy</h1>
                 <div className={classes.Posters}>
                     <Carousel>
                         {mostPopular}

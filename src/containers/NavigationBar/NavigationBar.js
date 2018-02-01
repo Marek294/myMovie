@@ -62,6 +62,7 @@ class NavigationBar extends Component {
         }
 
         const searchDiv = {
+            height: '2vw',
             transition: 'all 500ms'
         }
 
@@ -73,7 +74,6 @@ class NavigationBar extends Component {
             searchDiv.width = '20vw';
             searchDiv.opacity = '1';
             searchDiv.border = '1px solid #c20114';
-            searchDiv.height = '2vw';
             searchIcon.opacity = '0';
             if(searchQuery !== '') cancelStyle.display = 'inline';
         }
@@ -81,7 +81,6 @@ class NavigationBar extends Component {
             searchDiv.width = '0vw';
             searchDiv.opacity = '0';
             searchDiv.border = 'none';
-            searchDiv.height = '0vw';
             searchIcon.opacity = '1';
         }
 
@@ -111,7 +110,7 @@ class NavigationBar extends Component {
                 <div className={classes.RightSide}>
                     <i style={searchIcon} className="fas fa-search fa-2x" onClick={this.showSearchInput}></i>
                     <div className={classes.Search} >
-                        <input type='text' style={searchDiv} ref="searchInput" placeholder='filmy, seriale, gatunki' onChange={this.changeInputHandler} value={searchQuery} />
+                        <input type='text' style={searchDiv} ref="searchInput" placeholder='filmy, seriale, gatunki' onChange={this.changeInputHandler} value={searchQuery} disabled={!show} />
                         <button style={cancelStyle} onClick={this.deleteQuery} ><i className="fas fa-times"></i></button>
                     </div>
                     <div className={classes.User}>

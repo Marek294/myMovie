@@ -21,6 +21,7 @@
 }
 
 .Content {
+    height: 40%;
     width: 50vw; 
     position: absolute;
     top: 0;
@@ -44,6 +45,23 @@
     font-weight: 900;
     font-size: 2vw;
     margin-bottom: 6vw;
+}
+
+.Content button {
+    position: absolute;
+    bottom: 0;
+    margin-top: 8vw;
+    border-radius: 50px;
+    background: transparent;
+    border: 3px solid #c20114;
+    color: white;
+    padding: 1vw 4vw;
+    font-weight: 900;
+    font-size: 1vw;
+}
+
+.Content button:hover {
+    cursor: pointer;
 }
 
 .Buttons {

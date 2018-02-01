@@ -70,7 +70,9 @@ class News extends Component {
           let original_name;
           let name;
 
-          if(item.original_name) {
+          const isTV = !!item.original_name;
+
+          if(isTV) {
             type = "Seriale";
             original_name = item.original_name;
             name = item.name;
@@ -86,6 +88,7 @@ class News extends Component {
                   <h3>{type}</h3>
                   <h2>{original_name}</h2>
                   <h1>{name}</h1>
+                  <button className={classes.Button}>{isTV ? 'Strona serialu' : 'Strona filmu'}</button>
               </div>
               <img src={['https://image.tmdb.org/t/p/original',item.backdrop_path].join('')} alt="" />
             </div>
