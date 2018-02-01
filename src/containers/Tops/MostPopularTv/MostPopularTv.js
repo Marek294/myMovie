@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Carousel from '../../../hoc/PosterCarousel/Carousel';
+import Carousel from '../../../hoc/PosterCarousel/PosterCarousel';
 
 import classes from '../TopSection.css';
 

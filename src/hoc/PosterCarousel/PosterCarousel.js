@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Slide from './Slide';
 
-import classes from './Carousel.css';
+import classes from './PosterCarousel.css';
 import scrollTo from '../../utils/scrollToAnimate';
 
-class Carousel extends Component {
+class PosterCarousel extends Component {
     constructor(props) {
         super(props);
 
@@ -186,14 +186,14 @@ class Carousel extends Component {
 
         return (
             <div className={classes.CarouselContainer} onTouchStart={this.touchStart} onTouchEnd={this.touchEnd} onTouchMove={this.touchMove} >
-                <button onClick={this.handleLeftNav} style={leftDisplay} className={[classes.CarouselNav, classes.CarouselLeftNav].join(' ')} disabled={disabledButtons}><i className="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <button onClick={this.handleLeftNav} style={leftDisplay} className={[classes.CarouselNav, classes.CarouselLeftNav].join(' ')} disabled={disabledButtons}><i className="fas fa-chevron-left"></i></button>
                 <div className={classes.CarouselViewport} ref="carouselViewport">
                     {this.renderSlides(this.props.children)}
                 </div>
-                <button onClick={this.handleRightNav} style={rightDisplay} className={[classes.CarouselNav, classes.CarouselRightNav].join(' ')} disabled={disabledButtons}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
+                <button onClick={this.handleRightNav} style={rightDisplay} className={[classes.CarouselNav, classes.CarouselRightNav].join(' ')} disabled={disabledButtons}><i className="fas fa-chevron-right"></i></button>
             </div>
         );
     }
 }
 
-export default Carousel;
+export default PosterCarousel;

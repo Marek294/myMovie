@@ -162,11 +162,11 @@ class Carousel extends Component {
         const { dataToShow, disabledButtons } = this.state;
         return (
             <div className={classes.CarouselContainer} onTouchStart={this.touchStart} onTouchEnd={this.touchEnd} onTouchMove={this.touchMove} >
-                <button onClick={this.handleLeftNav} className={[classes.CarouselNav, classes.CarouselLeftNav].join(' ')} disabled={disabledButtons}><i className="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <button onClick={this.handleLeftNav} className={[classes.CarouselNav, classes.CarouselLeftNav].join(' ')} disabled={disabledButtons}><i className="fas fa-chevron-left"></i></button>
                 <div className={classes.CarouselViewport} ref="carouselViewport">
                     {dataToShow}
                 </div>
-                <button onClick={this.handleRightNav} className={[classes.CarouselNav, classes.CarouselRightNav].join(' ')} disabled={disabledButtons}><i className="fa fa-chevron-right" aria-hidden="true"></i></button>
+                <button onClick={this.handleRightNav} className={[classes.CarouselNav, classes.CarouselRightNav].join(' ')} disabled={disabledButtons}><i className="fas fa-chevron-right"></i></button>
             </div>
         );
     }

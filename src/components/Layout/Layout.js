@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactAux from '../../hoc/ReactAux';
-
-import classes from './Layout.css';
+import NavigationBar from '../../containers/NavigationBar/NavigationBar';
+import Footer from '../Footer/Footer';
 
 const layout = (props) => {
     return (
         <ReactAux>
-            <div>Toolbar, SideDraw, Backdrop</div>
-            <main className={classes.Content}>
+            <NavigationBar />
+            <main>
                 {props.children}
             </main>
+            <Footer />
         </ReactAux>
     );
 };
