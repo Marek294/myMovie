@@ -47,13 +47,18 @@
 }
 
 .Item:hover .Description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     animation-name: textOpacity;
     animation-duration: 1500ms;
     opacity: 1;
 }
 
 .Item .Description {
+    display: none;
     opacity: 0;
+    height: 100%;
 }
 
 .Overlay h2 {
