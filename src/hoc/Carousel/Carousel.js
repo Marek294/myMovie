@@ -30,6 +30,18 @@ class Carousel extends Component {
         });
     }
 
+    componentWillReceiveProps(nextProps) {
+        let { timer } = this.state;
+        let dataToShow = this.renderSlides(nextProps.children);
+
+        timer.reset(5000);
+
+        this.setState({
+            timer,
+            dataToShow
+        });
+    }
+
     componentWillUnmount() {
         window.removeEventListener('resize', this.onResize);
     }
