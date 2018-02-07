@@ -16,6 +16,10 @@
     width: 100%;
 }
 
+a {
+    color: white;
+}
+
 .Item {
     margin: 5px;
     transition: all 500ms;

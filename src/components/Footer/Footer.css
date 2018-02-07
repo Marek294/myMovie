@@ -1,6 +1,5 @@
 .Footer {
-    position: absolute;
-    bottom: 0;
+    align-self: flex-end;
     width: 100%;
     background: black;
     padding: 1vw 0;

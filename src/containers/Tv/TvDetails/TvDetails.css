@@ -1,0 +1,4 @@
+.MainSection {
+    display: flex;
+    justify-content: space-between;
+}

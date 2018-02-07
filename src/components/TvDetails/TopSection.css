@@ -1,0 +1,73 @@
+.Background {
+    position: relative;
+    height: 40vw;
+    overflow: hidden;
+}
+
+.Background img {
+    width: 100%;
+}
+
+.Background .Overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.TopSection {
+    position: relative;
+}
+
+.TopSection .Details {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Details img {
+    height: 70%;
+    border-radius: 30px;
+}
+
+.Details .Info {
+    margin: 50px;
+    height: 70%;
+    width: 40%;
+}
+
+.Details .VoteAverage {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Details h1 {
+    font-size: 3vw;
+    display: flex;
+    align-items: center;
+}
+
+.Details .VoteAverage i {
+    color: #ffbf00;
+    margin: 0px 20px;
+    font-size: 3vw;
+    display: flex;
+    align-items: center;
+}
+
+.Details p {
+    margin-top: 5vw;
+    width: 70%;
+}
+
+.Details h1, h2 {
+    margin: 0;
+}

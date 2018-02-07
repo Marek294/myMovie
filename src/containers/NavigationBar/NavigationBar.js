@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import classes from './NavigationBar.css';
 import logo from '../../assets/logo.png';
@@ -87,22 +88,22 @@ class NavigationBar extends Component {
         return (
             <div className={classes.NavBar}>
                 <div className={classes.LeftSide}>
-                    <img src={logo} alt="" />
+                    <Link to="/" ><img src={logo} alt="" /></Link>
                     <ul className={classes.NavList}>
                         <li className={[classes.NavItem, this.state.active === 'main' && classes.Active].join(' ')} onClick={() => this.clickHandle('main')}>
-                            <a href="#" >Strona główna</a>
+                            <a >Strona główna</a>
                             <div className={classes.border}/>
                         </li>
                         <li className={[classes.NavItem, this.state.active === 'tv' && classes.Active].join(' ')} onClick={() => this.clickHandle('tv')}>
-                            <a href="#" >Seriale</a>
+                            <a >Seriale</a>
                             <div className={classes.border}/>
                         </li>
                         <li className={[classes.NavItem, this.state.active === 'movie' && classes.Active].join(' ')} onClick={() => this.clickHandle('movie')}>
-                            <a href="#" >Filmy</a>
+                            <a >Filmy</a>
                             <div className={classes.border}/>
                         </li>
                         <li className={[classes.NavItem, this.state.active === 'mylist' && classes.Active].join(' ')} onClick={() => this.clickHandle('mylist')}>
-                            <a href="#" >Moja lista</a>
+                            <a >Moja lista</a>
                             <div className={classes.border}/>
                         </li>
                     </ul>

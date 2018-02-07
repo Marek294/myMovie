@@ -44,6 +44,7 @@ class Carousel extends Component {
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.onResize);
+        this.state.timer.stop();
     }
     
     touchStart = (e) => {

@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+
 import './App.css';
 import Layout from './components/Layout/Layout';
 
 import HomePage from './containers/HomePage/HomePage';
+import MovieDetails from './containers/Movie/MovieDetails/MovieDetails';
+import TvDetails from './containers/Tv/TvDetails/TvDetails';
 
 class App extends Component {
   render() {
     return (
         <Layout>
-          <HomePage />
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/movie/:id" exact component={MovieDetails} />
+            <Route path="/tv/:id" exact component={TvDetails} />
+          </Switch>
         </Layout>
     );
   }
