@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import TopSection from '../../../components/TvDetails/TopSection';
 import RightSide from '../../../components/TvDetails/RightSide';
+import Credits from '../../../components/TvDetails/Credits';
+import Seasons from '../../../components/TvDetails/Seasons';
 
 import classes from './TvDetails.css';
 
@@ -10,7 +12,8 @@ import { getTvDetails } from '../../../actions/Tv';
 
 class MovieDetails extends Component {
     state = {
-        tv: null
+        tv: null,
+        activeNav: 'credits'
     }
 
     componentDidMount() {
@@ -19,8 +22,21 @@ class MovieDetails extends Component {
             .then(tv => this.setState({ tv }))
     }
 
+    LinkHandle = (e) => {
+        this.setState({
+            activeNav: e.target.id
+        })
+    }
+
     render() {
-        const { tv } = this.state;
+        const { tv, activeNav } = this.state;
+        
+        const linkActive = {
+            'credits': activeNav === 'credits' ? classes.Active : '',
+            'seasons': activeNav === 'seasons' ? classes.Active : '',
+            'similar': activeNav === 'similar' ? classes.Active : '',
+            'recommendation': activeNav === 'recommendation' ? classes.Active : '',
+        }
 
         return (
             tv &&
@@ -35,11 +51,29 @@ class MovieDetails extends Component {
                     />
                     <div className={classes.MainSection}>
                         <div className={classes.LeftSide}>
-                            <div className={classes.Nav}></div>
-                            <div className={classes.Body}></div>
+                            <div className={classes.Nav}>
+                                <ul className={classes.NavList}>
+                                    <li className={[classes.NavItem, linkActive['credits']].join(' ')} id="credits" onClick={this.LinkHandle}>Obsada</li>
+                                    <li className={[classes.NavItem, linkActive['seasons']].join(' ')} id="seasons" onClick={this.LinkHandle}>Sezony</li>
+                                    <li className={[classes.NavItem, linkActive['similar']].join(' ')} id="similar" onClick={this.LinkHandle}>Podobne</li>
+                                    <li className={[classes.NavItem, linkActive['recommendation']].join(' ')} id="recommendation" onClick={this.LinkHandle}>Rekomendacje</li>
+                                </ul>
+                            </div>
+                            <div className={classes.Body}>
+                                { activeNav === 'credits' && 
+                                    <Credits
+                                        created_by={tv.created_by}
+                                        credits={tv.credits}
+                                    /> }
+                                { activeNav === 'seasons' && 
+                                    <Seasons
+                                        seasons={tv.seasons}
+                                    /> }
+                            </div>
                         </div>
                         <RightSide 
-                            origin_country={tv.origin_country} 
+                            origin_country={tv.origin_country}
+                            production_companies={tv.production_companies}
                             networks={tv.networks}
                             first_air_date={tv.first_air_date}
                             last_air_date={tv.last_air_date}

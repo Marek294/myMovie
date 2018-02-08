@@ -23,6 +23,10 @@ const RightSide = (props) => {
         return item.name;
     })
 
+    const production_companies = props.production_companies.map(item => {
+        return item.name;
+    })
+
     return (
         <div className={classes.RightSide}>
             <div className={classes.Info}>
@@ -32,6 +36,10 @@ const RightSide = (props) => {
             <div className={classes.Info}>
                 <p className={classes.Head}>Sieć</p>
                 <p className={classes.Body}>{networks.join(', ')}</p>
+            </div>
+            <div className={classes.Info}>
+                <p className={classes.Head}>Firmy produkcyjne</p>
+                <p className={classes.Body}>{production_companies.join(', ')}</p>
             </div>
             <div className={classes.Info}>
                 <p className={classes.Head}>Data pierwszej emisji</p>
