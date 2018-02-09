@@ -51,8 +51,7 @@
 
 .Details h1 {
     font-size: 3vw;
-    display: flex;
-    align-items: center;
+    text-align: left;
 }
 
 .Details .VoteAverage i {

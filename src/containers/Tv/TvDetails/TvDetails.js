@@ -5,6 +5,8 @@ import TopSection from '../../../components/TvDetails/TopSection';
 import RightSide from '../../../components/TvDetails/RightSide';
 import Credits from '../../../components/TvDetails/Credits';
 import Seasons from '../../../components/TvDetails/Seasons';
+import Similar from '../../../components/TvDetails/Similar';
+import Recommendation from '../../../components/TvDetails/Recommendation';
 
 import classes from './TvDetails.css';
 
@@ -14,6 +16,10 @@ class MovieDetails extends Component {
     state = {
         tv: null,
         activeNav: 'credits'
+    }
+
+    componentWillReceiveProps(nextProps) {
+        window.location.reload();
     }
 
     componentDidMount() {
@@ -68,6 +74,14 @@ class MovieDetails extends Component {
                                 { activeNav === 'seasons' && 
                                     <Seasons
                                         seasons={tv.seasons}
+                                    /> }
+                                { activeNav === 'similar' && 
+                                    <Similar
+                                        similar={tv.similar}
+                                    /> }
+                                { activeNav === 'recommendation' && 
+                                    <Recommendation
+                                        recommendations={tv.recommendations}
                                     /> }
                             </div>
                         </div>

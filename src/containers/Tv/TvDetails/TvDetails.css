@@ -32,12 +32,10 @@
 
 .NavItem:hover {
     cursor: pointer;
-    font-size: 1.5vw;
     color: #c20114;
 }
 
 .Active {
-    font-size: 1.5vw;
     color: #c20114;
 }
 

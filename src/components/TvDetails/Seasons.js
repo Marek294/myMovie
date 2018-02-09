@@ -21,7 +21,7 @@ const Seasons = (props) => {
                     <div className={classes.YearAndEpisodeCount}>
                         {item.air_date && <p>{moment(item.air_date).format('YYYY')}</p>}
                         {item.air_date && item.episode_count && <p>|</p>}
-                        {item.episode_count && <p>{item.episode_count} odcinków</p>}
+                        {item.episode_count > 0 && <p>{item.episode_count} odcinków</p>}
                     </div>
                     {item.air_date && <p>Premiera sezonu {wasPerformed ? 'odbyła' : 'odbędzie'} się {moment(item.air_date).format('LL')}</p>}
                 </div>
