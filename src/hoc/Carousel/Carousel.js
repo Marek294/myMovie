@@ -3,7 +3,7 @@ import Slide from './Slide';
 
 import classes from './Carousel.css';
 import scrollTo from '../../utils/scrollToAnimate';
-import Timer from './timer';
+// import Timer from './timer';
 
 class Carousel extends Component {
     constructor(props) {

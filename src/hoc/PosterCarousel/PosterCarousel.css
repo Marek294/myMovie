@@ -13,10 +13,13 @@
 }
 
 .CarouselViewport {
+    display: flex;
+    align-items: flex-end;
     white-space: nowrap;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
-
+    height: 100%;
+    width: 100%;
     
     -moz-user-select: -moz-none;
    -khtml-user-select: none;

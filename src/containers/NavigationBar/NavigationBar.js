@@ -76,7 +76,7 @@ class NavigationBar extends Component {
             searchDiv.opacity = '1';
             searchDiv.border = '1px solid #c20114';
             searchIcon.opacity = '0';
-            if(searchQuery !== '') cancelStyle.display = 'inline';
+            if(searchQuery !== '') cancelStyle.display = 'flex';
         }
         else {
             searchDiv.width = '0vw';

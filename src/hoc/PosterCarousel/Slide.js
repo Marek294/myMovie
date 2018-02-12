@@ -4,40 +4,56 @@ import classes from './Slide.css';
 
 class Slide extends Component {
     state = {
-        width: null
+        width: null,
+        height: null
     }
 
     componentDidMount() {
+        window.addEventListener('resize', this.onResize);
+        const height = document.body.clientWidth*0.9*(this.props.width/100)*(3/2);
+
         this.setState({
-            width: this.props.width
+            width: this.props.width,
+            height
         })
     }
 
+    onResize = () => {
+        const height = document.body.clientWidth*0.9*(this.props.width/100)*(3/2);
+
+        this.setState({
+            height
+        });
+    }
+
     onMouseEnterHandler = (e) => {
-        let { width } = this.state;
-        const { slider } = this.refs;
+        let { width, height } = this.state;
 
         const addPercentage = 5;
         this.props.moveAnotherSlides(this.props.index, this.refs.slider.offsetWidth);
 
         width += addPercentage;
+        height = document.body.clientWidth*0.9*(width/100)*(3/2);
+        
 
         this.setState({
-            width
+            width,
+            height
         })
     }
 
     onMouseLeaveHandler = () => {
-        let { width } = this.state;
-        const { slider } = this.refs;
+        let { width, height } = this.state;
 
         const addPercentage = 5;
         this.props.moveAnotherSlides(null, null);
 
         width -= addPercentage;
+        height = document.body.clientWidth*0.9*(width/100)*(3/2);
 
         this.setState({
-            width
+            width,
+            height
         })
     }
 
@@ -51,7 +67,7 @@ class Slide extends Component {
 
     render() {
         const { item } = this.props;
-        const { width } = this.state;
+        const { width, height } = this.state;
 
 
         const { index, hoverIndex, widthOfSlide, lastIndexOfCarousel } = this.props;
@@ -61,7 +77,7 @@ class Slide extends Component {
             <div className={classes.Slide} 
                 onMouseEnter={this.onMouseEnterHandler}
                 onMouseLeave={this.onMouseLeaveHandler} 
-                style={{ width: [width,'%'].join(''), '-webkit-transform': transform }} 
+                style={{ width: [width,'%'].join(''), height: [height,'px'].join(''), transform }} 
                 ref="slider">
                 {item}
             </div>

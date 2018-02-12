@@ -35,11 +35,11 @@
 
 .Details img {
     height: 70%;
-    border-radius: 30px;
+    border-radius: 2vw;
 }
 
 .Details .Info {
-    margin: 50px;
+    margin: 5vw;
     height: 70%;
     width: 40%;
 }
@@ -54,6 +54,10 @@
     text-align: left;
 }
 
+.Details h2 {
+    font-size: 2vw;
+}
+
 .Details .VoteAverage i {
     color: #ffbf00;
     margin: 0px 20px;
@@ -63,7 +67,8 @@
 }
 
 .Details p {
-    margin-top: 5vw;
+    margin-top: 2vw;
+    font-size: 0.8vw;
     width: 70%;
 }
 

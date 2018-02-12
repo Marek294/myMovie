@@ -1,21 +1,22 @@
 .RightSide {
-    margin: 50px;
-    padding: 50px;
+    margin: 2vw;
+    padding: 2vw;
     width: 15%;
     border-left: 1px solid #c20114;
 }
 
 .Info {
-    margin-top: 50px;
+    margin-top: 2vw;
 }
 
 .Info .Head {
     margin: 0;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 1vw;
 }
 
 .Info .Body {
-    margin-top: 20px;
-    font-size: 15px;
+    margin-top: 0;
+    font-size: 0.7vw;
+    display: flex;
 }
