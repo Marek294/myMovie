@@ -18,11 +18,15 @@
 
 .NavList {
     list-style: none;
+    margin: 0;
+    display: flex;
 }
 
 .NavItem {
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0 1vw;
 }
 
@@ -71,16 +75,20 @@
     background: transparent;
     font-weight: 900;
     color: white;
-    padding-left: 10px;
+    padding-left: 1vw;
+    font-size: 1vw;
 }
 
 .Search button {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     position: absolute;
-    height: 100%;
     background: transparent;
     border: none;
-    right: 0.2vw;
+    right: 0.5vw;
     color: #c20114;
 }
 
@@ -89,6 +97,7 @@
 }
 
 .Search button i {
+    margin: 0;
     font-size: 1.5vw;
 }
 

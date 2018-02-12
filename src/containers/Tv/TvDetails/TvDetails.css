@@ -20,12 +20,12 @@
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    margin: 20px auto;
+    margin: 2vw auto;
 }
 
 .NavItem {
     display: inline-block;
-    margin: 0px 20px;
+    margin: 0 2vw;
     font-size: 1vw;
     transition: all 500ms;
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import Carousel from '../../hoc/Carousel/Carousel';
-import Slider from 'react-slick';
 
 import classes from './News.css';
 
@@ -36,22 +35,7 @@ const News = (props) => {
     )
   });
 
-  //React slick playground
-
-  // var settings = {
-  //   dots: true,
-  //   draggable: false,
-  //   autoplay: true,
-  //   infinite: true,
-  //   speed: 1000,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1
-  // };
-
   return (
-    // <Slider {...settings}>
-    //   {news}
-    // </Slider>
     <Carousel>
       {news}
     </Carousel>
