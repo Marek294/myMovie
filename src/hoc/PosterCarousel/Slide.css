@@ -1,6 +1,5 @@
 .Slide {
     display: inline-block;
-    vertical-align: middle;
     white-space: normal;
     transition: all 500ms ease;
 }

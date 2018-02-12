@@ -15,8 +15,9 @@ class Slide extends Component {
 
     onMouseEnterHandler = (e) => {
         let { width } = this.state;
+        const { slider } = this.refs;
 
-        const addPercentage = 10;
+        const addPercentage = 5;
         this.props.moveAnotherSlides(this.props.index, this.refs.slider.offsetWidth);
 
         width += addPercentage;
@@ -28,8 +29,9 @@ class Slide extends Component {
 
     onMouseLeaveHandler = () => {
         let { width } = this.state;
+        const { slider } = this.refs;
 
-        const addPercentage = 10;
+        const addPercentage = 5;
         this.props.moveAnotherSlides(null, null);
 
         width -= addPercentage;
@@ -41,16 +43,16 @@ class Slide extends Component {
 
     transformCalculation = (index, hoverIndex, widthOfSlide, lastIndexOfCarousel) => {
         let calc = 0;
-        if( hoverIndex === lastIndexOfCarousel ) calc = widthOfSlide*1.8-widthOfSlide;
+        if( hoverIndex === lastIndexOfCarousel ) calc = widthOfSlide*1.4-widthOfSlide;
         if( hoverIndex === null) return null;
 
-        if( index < hoverIndex ) return 'translateX(-'+calc+'px)';
-        if( index === hoverIndex ) return 'translateX(-'+calc+'px)';
+        if( index <= hoverIndex ) return 'translateX(-'+calc+'px)';
     }
 
     render() {
         const { item } = this.props;
         const { width } = this.state;
+
 
         const { index, hoverIndex, widthOfSlide, lastIndexOfCarousel } = this.props;
         const transform = this.transformCalculation(index, hoverIndex, widthOfSlide, lastIndexOfCarousel)
@@ -59,7 +61,7 @@ class Slide extends Component {
             <div className={classes.Slide} 
                 onMouseEnter={this.onMouseEnterHandler}
                 onMouseLeave={this.onMouseLeaveHandler} 
-                style={{ width: [width,'%'].join(''), transform: transform }} 
+                style={{ width: [width,'%'].join(''), '-webkit-transform': transform }} 
                 ref="slider">
                 {item}
             </div>

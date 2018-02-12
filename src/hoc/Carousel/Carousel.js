@@ -25,26 +25,26 @@ class Carousel extends Component {
         let dataToShow = this.renderSlides(this.props.children);
 
         this.setState({
-            timer: new Timer(this.handleRightNav, 5000),
+            // timer: new Timer(this.handleRightNav, 5000),
             dataToShow
         });
     }
 
     componentWillReceiveProps(nextProps) {
-        let { timer } = this.state;
+        // let { timer } = this.state;
         let dataToShow = this.renderSlides(nextProps.children);
 
-        timer.reset(5000);
+        // timer.reset(5000);
 
         this.setState({
-            timer,
+            // timer,
             dataToShow
         });
     }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.onResize);
-        this.state.timer.stop();
+        // this.state.timer.stop();
     }
     
     touchStart = (e) => {
@@ -106,17 +106,17 @@ class Carousel extends Component {
     handleLeftNav = (e) => {
         const { carouselViewport } = this.refs;
         const { timeToScroll } = this.state;
-        let { timer } = this.state;
+        // let { timer } = this.state;
 
         this.ArrayShuffle('left');
 
         const newPosition = carouselViewport.scrollLeft - carouselViewport.offsetWidth;
 
-        timer.reset(5000);
+        // timer.reset(5000);
 
         this.setState({
             disabledButtons: true,
-            timer
+            // timer
         });
 
         setTimeout(() => {
@@ -136,17 +136,17 @@ class Carousel extends Component {
     handleRightNav = (e) => {
         const { carouselViewport } = this.refs;
         const { timeToScroll } = this.state;
-        let { timer } = this.state;
+        // let { timer } = this.state;
 
         this.ArrayShuffle('right');
 
         const newPosition = carouselViewport.scrollLeft + carouselViewport.offsetWidth;
         
-        timer.reset(5000);
+        // timer.reset(5000);
 
         this.setState({
             disabledButtons: true,
-            timer
+            // timer
         });
 
         setTimeout(() => {
