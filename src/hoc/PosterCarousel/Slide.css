@@ -2,4 +2,5 @@
     display: inline-block;
     white-space: normal;
     transition: all 500ms ease;
+    -webkit-transform: translateZ(0);
 }

@@ -61,7 +61,7 @@ class Slide extends Component {
             <div className={classes.Slide} 
                 onMouseEnter={this.onMouseEnterHandler}
                 onMouseLeave={this.onMouseLeaveHandler} 
-                style={{ width: [width,'%'].join(''), '-webkit-transform': transform }} 
+                style={{ width: [width,'%'].join(''), transform }} 
                 ref="slider">
                 {item}
             </div>
