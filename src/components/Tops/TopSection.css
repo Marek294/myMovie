@@ -1,19 +1,20 @@
 .Container {
-    margin: 0px 4vw 6vw 4vw;
-    transform: translateY(-60%);
+    margin: 0 4vw 0 4vw;
+    /* transform: translateY(-60%); */
+    position: relative;
+    height: 20vw;
 }
 
 .Container h1 {
-    position: absolute;
     top: 10%;
     font-weight: 900;
     font-size: 2vw;
+    text-align: left;
 }
 
 .Posters {
-    display: flex;
-    height: 23vw;
-    width: 100%;
+    bottom: 0;
+    position: absolute;
 }
 
 a {
