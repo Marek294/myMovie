@@ -5,7 +5,7 @@ import classes from './Footer.css';
 const Footer = () => {
     return (
         <footer className={classes.Footer}>
-            <p>&copy; 2018 MyMoviehi</p>
+            <p>&copy; 2018 MyMovieHi</p>
         </footer>
     );
 };
