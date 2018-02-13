@@ -1,0 +1,30 @@
+.User {
+    margin-left: 0.5vw;
+    display: flex;
+    align-items: center;
+}
+
+.User img {
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    border: 2px solid #c20114;
+}
+
+.User i {
+    margin-left: 0.5vw;
+    font-size: 1.5vw;
+    color: #c20114;
+}
+
+@media (max-width: 500px) {
+    .User img {
+        height: 40px;
+        width: 40px;
+        border: 1px solid #c20114;
+    }
+
+    .User i {
+        display: none;
+    }
+}

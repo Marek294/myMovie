@@ -1,0 +1,57 @@
+.NavBar {
+    background: black;
+}
+
+.DesktopOnly {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1vw 3vw;
+}
+
+.DesktopOnly .LeftSide {
+    display: flex;
+    align-items: center;
+}
+
+.DesktopOnly .RightSide {
+    display: flex;
+    align-items: center;
+}
+
+.MobileOnly {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.MobileOnly button {
+    padding: 0 20px;
+    position: absolute;
+    height: 100%;
+    background: transparent;
+    border: none;
+}
+
+.MobileOnly button:active {
+    padding: 0 20px;
+}
+
+.MobileOnly i {
+    color: #c20114;
+    font-size: 20px;
+}
+
+@media (max-width: 499px) {
+    .DesktopOnly {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {
+    .MobileOnly {
+        display: none;
+    }
+}

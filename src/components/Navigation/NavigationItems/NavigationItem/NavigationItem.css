@@ -1,0 +1,45 @@
+.NavItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1vw;
+}
+
+.NavItem a {
+    font-weight: 900;
+    font-size: 1.2vw;
+    color: #c20114;
+    text-decoration: none;
+}
+
+.NavItem .border {
+    position: absolute;
+    bottom: -0.6vw;
+    width: 0%;
+    background: #084887;
+    height: 0.35vw;
+    transition: all 500ms;
+}
+
+.NavItem:hover .border,
+.NavItem:active .border,
+.Active .border {
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    .NavItem {
+        margin: 10px 0px;
+        width: 90%;
+    }
+
+    .NavItem a {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .NavItem .border {
+        display: none;
+    }
+}
