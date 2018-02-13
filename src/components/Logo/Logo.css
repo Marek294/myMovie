@@ -1,0 +1,26 @@
+.Logo img {
+    width: 10vw;
+}
+
+@media (max-width: 499px) {
+    .Logo {
+        padding: 10px 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        outline: 0;
+    }
+
+    a:active {
+        background: transparent;
+    }
+
+    .Logo img {
+        width: 30vw;
+    }
+}

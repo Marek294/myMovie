@@ -7,6 +7,13 @@
 
 .Footer p {
     margin: 0;
+    font-size: 1vw;
     text-align: center;
     width: 100%;
+}
+
+@media (max-width: 499px) {
+    .Footer p {
+        font-size: 10px;
+    }
 }

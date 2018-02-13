@@ -1,0 +1,47 @@
+.SideDrawer {
+    position: fixed;
+    width: 200px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: black;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+    border-right: 1px solid #c20114;
+}
+
+.SideDrawer .border {
+    width: 100%;
+    border-bottom: 1px solid #c20114;
+}
+
+@media (min-width: 500px) {
+    .SideDrawer {
+        display: none;
+    }
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(-100%);
+}
+
+.User {
+    padding: 20px 10px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.User p {
+    font-size: 10px;
+    margin: 10px 10px;
+}
+
+.NavigationItems {
+    margin: 0px 10px;
+}

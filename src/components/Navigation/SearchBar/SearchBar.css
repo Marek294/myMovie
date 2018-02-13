@@ -1,0 +1,45 @@
+.SearchBar {
+    display: flex;
+}
+
+.SearchBar i {
+    margin-right: 0.5vw;
+    font-size: 2vw;
+    color: #c20114;
+}
+
+.Search {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.Search input {
+    background: transparent;
+    font-weight: 900;
+    color: white;
+    padding-left: 1vw;
+    font-size: 1vw;
+}
+
+.Search button {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: absolute;
+    background: transparent;
+    border: none;
+    right: 0.5vw;
+    color: #c20114;
+}
+
+.Search button:active {
+   padding: 0;
+}
+
+.Search button i {
+    margin: 0;
+    font-size: 1.5vw;
+}
