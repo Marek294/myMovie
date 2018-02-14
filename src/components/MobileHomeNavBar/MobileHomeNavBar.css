@@ -1,0 +1,19 @@
+.Dummy {
+    height: 1px;
+}
+
+.Div {
+    margin: 10px;
+}
+
+p {
+    font-size: 3vw;
+    margin: 0;
+    text-align: center;
+}
+
+@media (min-width: 500px) {
+    .MobileNav {
+        display: none;
+    }
+}

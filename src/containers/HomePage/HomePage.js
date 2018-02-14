@@ -9,6 +9,7 @@ import MostPopularTv from '../../components/Tops/MostPopularTv/MostPopularTv';
 import TopRatedMovies from '../../components/Tops/TopRatedMovies/TopRatedMovies';
 import MostPopularMovies from '../../components/Tops/MostPopularMovies/MostPopularMovies';
 import Loader from '../../components/Loader/Loader';
+import MobileHomeNavBar from '../../components/MobileHomeNavBar/MobileHomeNavBar';
 
 import { getTopRatedTV, getMostPopularTV } from '../../actions/Tv';
 import { getUpcoming, getTopRatedMovies, getMostPopularMovies } from '../../actions/Movie';
@@ -54,6 +55,7 @@ class HomePage extends Component {
             this.state.loading ? <Loader /> :
             <ReactAux>
                 <HomeTop Upcoming={this.state.Upcoming}/>
+                <MobileHomeNavBar />
                 <TopRatedTv topRated={this.state.topRatedTV} />
                 <MostPopularTv mostPopular={this.state.mostPopularTv} />
                 <TopRatedMovies topRated={this.state.topRatedMovies} />
