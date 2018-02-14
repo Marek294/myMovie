@@ -17,7 +17,7 @@ const MostPopularTv = (props) => {
                     <p>{cutOverview(item.overview)}</p>
                 </div>
             </div>
-            <img src={['https://image.tmdb.org/t/p/original',item.poster_path].join('')} alt="" />
+            <img src={['https://image.tmdb.org/t/p/w200',item.poster_path].join('')} alt="" />
             </div>
         </Link>
       )

@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 import ReactAux from '../../hoc/ReactAux';
-import News from '../../components/News/News';
+import HomeTop from '../../components/HomeTop/HomeTop';
 import TopRatedTv from '../../components/Tops/TopRatedTv/TopRatedTv';
 import MostPopularTv from '../../components/Tops/MostPopularTv/MostPopularTv';
 import TopRatedMovies from '../../components/Tops/TopRatedMovies/TopRatedMovies';
 import MostPopularMovies from '../../components/Tops/MostPopularMovies/MostPopularMovies';
 import Loader from '../../components/Loader/Loader';
 
-import { getOnTheAir, getTopRatedTV, getMostPopularTV } from '../../actions/Tv';
-import { getNowPlaying, getTopRatedMovies, getMostPopularMovies } from '../../actions/Movie';
+import { getTopRatedTV, getMostPopularTV } from '../../actions/Tv';
+import { getUpcoming, getTopRatedMovies, getMostPopularMovies } from '../../actions/Movie';
 
 class HomePage extends Component {
     state = {
         loading: true,
-        news: [],
+        nowPlaying: [],
         newsLoaded: 0,
         topRatedTV: [],
         mostPopularTv: [],
@@ -28,29 +29,22 @@ class HomePage extends Component {
             loading: true
         });
 
-        const p1 = this.props.getOnTheAir();
-        const p2 = this.props.getNowPlaying();
+        const p1 = this.props.getUpcoming(moment().subtract(1, 'months'));
 
-        const p3 = this.props.getTopRatedTV();
-        const p4 = this.props.getMostPopularTV();
+        const p2 = this.props.getTopRatedTV();
+        const p3 = this.props.getMostPopularTV();
 
-        const p5 = this.props.getTopRatedMovies();
-        const p6 = this.props.getMostPopularMovies();
+        const p4 = this.props.getTopRatedMovies();
+        const p5 = this.props.getMostPopularMovies();
 
-        Promise.all([p1, p2, p3, p4, p5, p6]).then(results => {
-            let news = [];
-            for(let i=0; i < results[0].length/5+1; i++) {
-                if(results[0][i]) news.push(results[0][i]);
-                if(results[1][i]) news.push(results[1][i]);
-            }
-
+        Promise.all([p1, p2, p3, p4, p5]).then(results => {
             this.setState({
-                news,
                 loading: false,
-                topRatedTV: results[2],
-                mostPopularTv: results[3],
-                topRatedMovies: results[4],
-                mostPopularMovies: results[5]
+                Upcoming: results[0],
+                topRatedTV: results[1],
+                mostPopularTv: results[2],
+                topRatedMovies: results[3],
+                mostPopularMovies: results[4]
             })
         })
       }
@@ -59,7 +53,7 @@ class HomePage extends Component {
         return (
             this.state.loading ? <Loader /> :
             <ReactAux>
-                <News news={this.state.news}/>
+                <HomeTop Upcoming={this.state.Upcoming}/>
                 <TopRatedTv topRated={this.state.topRatedTV} />
                 <MostPopularTv mostPopular={this.state.mostPopularTv} />
                 <TopRatedMovies topRated={this.state.topRatedMovies} />
@@ -69,4 +63,4 @@ class HomePage extends Component {
     }
 }
 
-export default connect(null, { getOnTheAir, getNowPlaying, getTopRatedTV, getMostPopularTV, getTopRatedMovies, getMostPopularMovies })(HomePage);
+export default connect(null, { getUpcoming, getTopRatedTV, getMostPopularTV, getTopRatedMovies, getMostPopularMovies })(HomePage);

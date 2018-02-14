@@ -1,6 +1,6 @@
 .Container {
-    margin: 0 auto;
-    transform: translateY(-60%);
+    margin: 5vw auto;
+    transform: translateY(-80%);
     position: relative;
     height: 20vw;
     width: 90%;
@@ -20,13 +20,13 @@
 
 a {
     color: white;
-    height: 100%;
 }
 
 .Item {
     margin: 5px;
     transition: all 500ms;
     position: relative;
+    height: 100%;
 }
 
 .Item img {

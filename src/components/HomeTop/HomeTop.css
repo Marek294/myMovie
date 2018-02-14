@@ -1,0 +1,9 @@
+.HomeTop {
+    width: 100%;
+    height: 40vw;
+    overflow: hidden;
+}
+
+.HomeTop img {
+    width: 100%;
+}

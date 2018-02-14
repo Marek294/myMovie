@@ -25,14 +25,16 @@ class Layout extends Component {
     render () {
         return (
             <ReactAux>
-                <NavigationBar opened={this.sideDrawerOpenedHandler} />
-                <SideDrawer 
-                    open={this.state.showSideDrawer} 
-                    closed={this.sideDrawerClosedHandler}
-                />
-                <main>
-                    {this.props.children}
-                </main>
+                <div>
+                    <NavigationBar opened={this.sideDrawerOpenedHandler} />
+                    <SideDrawer 
+                        open={this.state.showSideDrawer} 
+                        closed={this.sideDrawerClosedHandler}
+                    />
+                    <main>
+                        {this.props.children}
+                    </main>
+                </div>
                 <Footer />
             </ReactAux>
         );
