@@ -47,17 +47,10 @@ class MobileCarousel extends Component {
 
     onResize = () => {
         const { carouselViewport } = this.refs;
-        const { timeToScroll, active } = this.state;
+        const { active } = this.state;
  
         console.log(active);
         carouselViewport.scrollLeft = Math.round(carouselViewport.offsetWidth / 3) * (active-1);
-
-        // scrollTo({
-        //     element: carouselViewport, 
-        //     to: carouselViewport.offsetWidth * currentView, 
-        //     duration: timeToScroll, 
-        //     scrollDirection: 'scrollLeft'
-        // });
     }
 
     handleLeftNav = (e) => {
