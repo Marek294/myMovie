@@ -11,10 +11,9 @@ class MobileCarousel extends Component {
         this.state = {
             startTouchX: null,
             moveTouchX: null,
-            timeToScroll: 300,
+            timeToScroll: 200,
             slidesInView: 3,
-            disabledScroll: false,
-            active: 1
+            disabledScroll: false
         }
     }
 
@@ -25,89 +24,74 @@ class MobileCarousel extends Component {
     componentWillUnmount() {
         window.removeEventListener('resize', this.onResize);
     }
-    
-    touchStart = (e) => {
-        this.setState({
-            startTouchX: e.touches[0].screenX
-        })
-    }
 
-    touchMove = (e) => {
-        this.setState({
-            moveTouchX: e.touches[0].screenX
-        })
-    }
+    componentWillReceiveProps(nextProps) {
+        const { carouselViewport } = this.refs;
+        const { timeToScroll } = this.state;
 
-    touchEnd = (e) => {
-        const { startTouchX, moveTouchX, disabledScroll } = this.state;
-
-        if( startTouchX - moveTouchX > 80 && !disabledScroll) this.handleRightNav();
-        if( startTouchX - moveTouchX < -80 && !disabledScroll) this.handleLeftNav();
+        const newPosition = Math.round(carouselViewport.offsetWidth / 3) * (nextProps.active-1);
+        scrollTo({
+            element: carouselViewport, 
+            to: newPosition, 
+            duration: timeToScroll, 
+            scrollDirection: 'scrollLeft'
+        });
     }
 
     onResize = () => {
         const { carouselViewport } = this.refs;
-        const { active } = this.state;
+        const { active } = this.props;
  
-        console.log(active);
         carouselViewport.scrollLeft = Math.round(carouselViewport.offsetWidth / 3) * (active-1);
     }
 
-    handleLeftNav = (e) => {
-        const { carouselViewport } = this.refs;
-        const { timeToScroll } = this.state;
-        let { active } = this.state;
+    // handleLeftNav = (e) => {
+    //     const { carouselViewport } = this.refs;
+    //     const { timeToScroll } = this.state;
 
-        const newPosition = carouselViewport.scrollLeft - Math.round(carouselViewport.offsetWidth / 3);
+    //     const newPosition = carouselViewport.scrollLeft - Math.round(carouselViewport.offsetWidth / 3);
 
-        if(newPosition >= 0-10) active--;
+    //     this.setState({
+    //         disabledScroll: true,
+    //     });
 
-        this.setState({
-            disabledScroll: true,
-            active
-        });
-
-        setTimeout(() => {
-            this.setState({
-                disabledScroll: false
-            })
-        }, timeToScroll);
+    //     setTimeout(() => {
+    //         this.setState({
+    //             disabledScroll: false
+    //         })
+    //     }, timeToScroll);
         
-        scrollTo({
-            element: carouselViewport, 
-            to: newPosition, 
-            duration: timeToScroll, 
-            scrollDirection: 'scrollLeft'
-        });
-    }
+    //     scrollTo({
+    //         element: carouselViewport, 
+    //         to: newPosition, 
+    //         duration: timeToScroll, 
+    //         scrollDirection: 'scrollLeft'
+    //     });
+    // }
 
-    handleRightNav = (e) => {
-        const { carouselViewport } = this.refs;
-        const { timeToScroll } = this.state;
-        let { active } = this.state;
+    // handleRightNav = (e) => {
+    //     const { carouselViewport } = this.refs;
+    //     const { timeToScroll } = this.state;
 
-        const newPosition = carouselViewport.scrollLeft + Math.round(carouselViewport.offsetWidth / 3);
+    //     const newPosition = carouselViewport.scrollLeft + Math.round(carouselViewport.offsetWidth / 3);
+
+    //     this.setState({
+    //         disabledScroll: true,
+    //     });
+
+    //     setTimeout(() => {
+    //         this.setState({
+    //             disabledScroll: false
+    //         })
+    //     }, timeToScroll);
         
-        if(newPosition <= carouselViewport.scrollLeftMax+10) active++;
-
-        this.setState({
-            disabledScroll: true,
-            active
-        });
-
-        setTimeout(() => {
-            this.setState({
-                disabledScroll: false
-            })
-        }, timeToScroll);
-        
-        scrollTo({
-            element: carouselViewport, 
-            to: newPosition, 
-            duration: timeToScroll, 
-            scrollDirection: 'scrollLeft'
-        });
-    }
+    //     scrollTo({
+    //         element: carouselViewport, 
+    //         to: newPosition, 
+    //         duration: timeToScroll, 
+    //         scrollDirection: 'scrollLeft'
+    //     });
+    // }
 
     renderSlides(data) {
         return data.map((item,i) => 
@@ -121,7 +105,7 @@ class MobileCarousel extends Component {
 
     render() {
         return (
-            <div className={classes.CarouselContainer} onTouchStart={this.touchStart} onTouchEnd={this.touchEnd} onTouchMove={this.touchMove} >
+            <div className={classes.CarouselContainer} >
                 <div className={classes.CarouselViewport} ref="carouselViewport">
                     {this.renderSlides(this.props.children)}
                 </div>

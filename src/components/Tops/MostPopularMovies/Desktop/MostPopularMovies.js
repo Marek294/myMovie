@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Carousel from '../../../hoc/PosterCarousel/PosterCarousel';
-import cutOverview from '../../../utils/cutOverview';
+import Carousel from '../../../../hoc/PosterCarousel/PosterCarousel';
+import cutOverview from '../../../../utils/cutOverview';
 
-import classes from '../TopSection.css';
+import classes from '../../TopSection.css';
 
-const TopRatedMovies = (props) => {
-  const topRated = props.topRated.map((item,i) => { 
+const MostPopularMovies = (props) => {
+  const mostPopular = props.mostPopularMovies.map((item,i) => { 
     return (
       <Link key={i} to={"/movie/" + item.id} >
         <div className={classes.Item} >
@@ -25,14 +25,14 @@ const TopRatedMovies = (props) => {
 
   return (
     <div className={classes.Container}>
-        <h1>Najwyżej oceniane filmy</h1>
+        <h1>Najbardziej popularne filmy</h1>
         <div className={classes.Posters}>
             <Carousel>
-                {topRated}
+                {mostPopular}
             </Carousel>
         </div>
     </div>
   );
 };
 
-export default TopRatedMovies;
+export default MostPopularMovies;

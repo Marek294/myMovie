@@ -16,7 +16,6 @@ class Layout extends Component {
     }
 
     sideDrawerOpenedHandler = () => {
-        console.log('asd');
         this.setState({
             showSideDrawer: true
         })

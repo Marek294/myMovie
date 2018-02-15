@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Carousel from '../../../hoc/PosterCarousel/PosterCarousel';
-import cutOverview from '../../../utils/cutOverview';
+import Carousel from '../../../../hoc/PosterCarousel/PosterCarousel';
+import cutOverview from '../../../../utils/cutOverview';
 
-import classes from '../TopSection.css';
+import classes from '../../TopSection.css';
 
 const MostPopularTv = (props) => {
-    const mostPopular = props.mostPopular.map((item,i) => { 
+    const mostPopular = props.mostPopularTv.map((item,i) => { 
       return (
         <Link key={i} to={"/tv/" + item.id} >
             <div className={classes.Item} >

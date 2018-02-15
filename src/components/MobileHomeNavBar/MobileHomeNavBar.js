@@ -4,28 +4,24 @@ import Carousel from '../../hoc/MobileCarousel/MobileCarousel';
 import classes from './MobileHomeNavBar.css';
 
 class MobileHomeNavBar extends Component {
-    clickHandler(number) {
-        console.log(number);
-    }
-
     render() {
         return (
             <div className={classes.MobileNav}>
-                <Carousel>
+                <Carousel activeHandler={this.props.activeHandler} active={this.props.active} >
                     <div className={classes.Dummy}></div>
-                    <div className={classes.Div} onClick={() => this.clickHandler(1)}>
+                    <div className={classes.Div}>
                         <p>Popularne</p>
                         <p>seriale</p>
                     </div>
-                    <div className={classes.Div} onClick={() => this.clickHandler(2)}>
+                    <div className={classes.Div}>
                         <p>Najwyżej oceniane</p>
                         <p>seriale</p>
                     </div>
-                    <div className={classes.Div} onClick={() => this.clickHandler(3)}>
+                    <div className={classes.Div}>
                         <p>Popularne</p>
                         <p>filmy</p>
                     </div>
-                    <div className={classes.Div} onClick={() => this.clickHandler(4)}>
+                    <div className={classes.Div}>
                         <p>Najwyżej oceniane</p>
                         <p>filmy</p>
                     </div>

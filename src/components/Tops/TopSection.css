@@ -80,6 +80,7 @@ a {
 
 .Overlay p {
     font-size: 0.8vw;
+    text-align: left;
 }
 
 @keyframes textOpacity {
