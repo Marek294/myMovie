@@ -3,16 +3,21 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 import ReactAux from '../../hoc/ReactAux';
-import HomeTop from '../../components/HomeTop/HomeTop';
-import TopRatedTv from '../../components/Tops/TopRatedTv/TopRatedTv';
-import MostPopularTv from '../../components/Tops/MostPopularTv/MostPopularTv';
-import TopRatedMovies from '../../components/Tops/TopRatedMovies/TopRatedMovies';
-import MostPopularMovies from '../../components/Tops/MostPopularMovies/MostPopularMovies';
+// import HomeTop from '../../components/HomeTop/HomeTop';
+// import TopRatedTv from '../../components/Tops/TopRatedTv/TopRatedTv';
+// import MostPopularTv from '../../components/Tops/MostPopularTv/MostPopularTv';
+// import TopRatedMovies from '../../components/Tops/TopRatedMovies/TopRatedMovies';
+// import MostPopularMovies from '../../components/Tops/MostPopularMovies/MostPopularMovies';
 import Loader from '../../components/Loader/Loader';
-import MobileHomeNavBar from '../../components/MobileHomeNavBar/MobileHomeNavBar';
+// import MobileHomeNavBar from '../../components/MobileHomeNavBar/MobileHomeNavBar';
+
+import Desktop from './Desktop/Desktop';
+import Mobile from './Mobile/Mobile';
 
 import { getTopRatedTV, getMostPopularTV } from '../../actions/Tv';
 import { getUpcoming, getTopRatedMovies, getMostPopularMovies } from '../../actions/Movie';
+
+import classes from './HomePage.css';
 
 class HomePage extends Component {
     state = {
@@ -54,12 +59,24 @@ class HomePage extends Component {
         return (
             this.state.loading ? <Loader /> :
             <ReactAux>
-                <HomeTop Upcoming={this.state.Upcoming}/>
-                <MobileHomeNavBar />
-                <TopRatedTv topRated={this.state.topRatedTV} />
-                <MostPopularTv mostPopular={this.state.mostPopularTv} />
-                <TopRatedMovies topRated={this.state.topRatedMovies} />
-                <MostPopularMovies mostPopular={this.state.mostPopularMovies}/>
+                <div className={classes.DesktopOnly} >
+                    <Desktop 
+                        Upcoming={this.state.Upcoming}
+                        topRatedTv={this.state.topRatedTV}
+                        topRatedMovies={this.state.topRatedMovies}
+                        mostPopularMovies={this.state.mostPopularMovies}
+                        mostPopularTv={this.state.mostPopularTv}
+                    />
+                </div>
+                <div className={classes.MobileOnly}>
+                    <Mobile 
+                        Upcoming={this.state.Upcoming}
+                        topRatedTv={this.state.topRatedTV}
+                        topRatedMovies={this.state.topRatedMovies}
+                        mostPopularMovies={this.state.mostPopularMovies}
+                        mostPopularTv={this.state.mostPopularTv}
+                    />
+                </div>
             </ReactAux>
         );
     }
