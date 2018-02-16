@@ -2,15 +2,16 @@ import React from 'react';
 import _ from 'lodash';
 import moment from 'moment';
 import 'moment/min/locales';
-import Image from './Image';
+import Image from '../../Image';
 
-import noPoster from '../../assets/no_poster.jpg';
+import noPoster from '../../../../assets/no_poster.jpg';
 import classes from './Seasons.css';
 
 const Seasons = (props) => {
+    const { tv } = props; 
     moment.locale('pl');
 
-    let seasons = _.orderBy(props.seasons, ['season_number'], ['asc']);
+    let seasons = _.orderBy(tv.seasons, ['season_number'], ['asc']);
     seasons = seasons.map((item,i) => {
         const wasPerformed = moment().isAfter(item.air_date);
         return (

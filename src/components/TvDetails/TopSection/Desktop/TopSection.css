@@ -67,6 +67,7 @@
 }
 
 .Details p {
+    text-align: left;
     margin-top: 2vw;
     font-size: 0.8vw;
     width: 70%;

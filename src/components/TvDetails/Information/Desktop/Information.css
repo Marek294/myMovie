@@ -1,4 +1,4 @@
-.RightSide {
+.Information {
     margin: 2vw;
     padding: 2vw;
     width: 15%;
@@ -19,4 +19,13 @@
     margin-top: 0;
     font-size: 0.7vw;
     display: flex;
+}
+
+.Info p {
+    text-align: left;
+}
+
+.Info a {
+    color: white;
+    text-decoration: none;
 }

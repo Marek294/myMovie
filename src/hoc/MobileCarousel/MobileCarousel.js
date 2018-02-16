@@ -29,13 +29,17 @@ class MobileCarousel extends Component {
         const { carouselViewport } = this.refs;
         const { timeToScroll } = this.state;
 
-        const newPosition = Math.round(carouselViewport.offsetWidth / 3) * (nextProps.active-1);
-        scrollTo({
-            element: carouselViewport, 
-            to: newPosition, 
-            duration: timeToScroll, 
-            scrollDirection: 'scrollLeft'
-        });
+        if(nextProps.active === this.props.active) {
+            carouselViewport.scrollLeft = 0;
+        } else {
+            const newPosition = Math.round(carouselViewport.offsetWidth / 3) * (nextProps.active-1);
+            scrollTo({
+                element: carouselViewport, 
+                to: newPosition, 
+                duration: timeToScroll, 
+                scrollDirection: 'scrollLeft'
+            });
+        }
     }
 
     onResize = () => {
@@ -94,13 +98,15 @@ class MobileCarousel extends Component {
     // }
 
     renderSlides(data) {
-        return data.map((item,i) => 
-            <Slide key={i}
+        return data.map((item,i) => {
+            if(Array.isArray(item)) return this.renderSlides(item);
+            else
+            return (<Slide key={i}
                 item={item}
                 width={100/this.state.slidesInView}
                 index={i}
-            />
-        )
+            />)
+        })
     }
 
     render() {

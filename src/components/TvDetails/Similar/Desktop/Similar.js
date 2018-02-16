@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Image from './Image';
+import Image from '../../Image';
 
-import noPoster from '../../assets/no_poster.jpg';
-import classes from './RecommendationAndSimilar.css';
+import noPoster from '../../../../assets/no_poster.jpg';
+import classes from './Similar.css';
 
-const Recommendation = (props) => {
-    const recommendations = props.recommendations.results.map((item,i) => {
+const Similar = (props) => {
+    const similar = props.similar.results.map((item,i) => {
         return (
             <Link key={i} to={"/tv/" + item.id} >
                 <div className={classes.Item}>
@@ -25,9 +25,9 @@ const Recommendation = (props) => {
 
     return (
         <div className={classes.Container}>
-            {recommendations}
+            {similar}
         </div>
     );
 };
 
-export default Recommendation;
+export default Similar;

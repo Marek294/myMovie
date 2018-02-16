@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import ReactAux from '../../../hoc/ReactAux';
 import HomeTop from '../../../components/HomeTop/HomeTop';
-import MobileHomeNavBar from '../../../components/MobileHomeNavBar/MobileHomeNavBar';
+import MobileSectionNavBar from '../../../components/MobileSectionNavBar/MobileSectionNavBar';
 import TopRatedTv from '../../../components/Tops/TopRatedTv/Mobile/TopRatedTv';
 import MostPopularTv from '../../../components/Tops/MostPopularTv/Mobile/MostPopularTv';
 import TopRatedMovies from '../../../components/Tops/TopRatedMovies/Mobile/TopRatedMovies';
@@ -68,7 +68,24 @@ class Mobile extends Component {
         return (
             <ReactAux>
                 <HomeTop Upcoming={this.props.Upcoming}/>
-                <MobileHomeNavBar activeHandler={this.activeHandler} active={this.state.active} />
+                <MobileSectionNavBar activeHandler={this.activeHandler} active={this.state.active} >
+                    <ReactAux>
+                        <p>Popularne</p>
+                        <p>seriale</p>
+                    </ReactAux>
+                    <ReactAux>
+                        <p>Najwyżej oceniane</p>
+                        <p>seriale</p>
+                    </ReactAux>
+                    <ReactAux>
+                        <p>Popularne</p>
+                        <p>filmy</p>
+                    </ReactAux>
+                    <ReactAux>
+                        <p>Najwyżej oceniane</p>
+                        <p>filmy</p>
+                    </ReactAux>
+                </MobileSectionNavBar>
                 <MobileSectionCarousel leftHandler={this.leftHandler} rightHandler={this.rightHandler} active={this.state.active}>
                     <MostPopularTv mostPopularTv={this.props.mostPopularTv} />
                     <TopRatedTv topRatedTv={this.props.topRatedTv} />
