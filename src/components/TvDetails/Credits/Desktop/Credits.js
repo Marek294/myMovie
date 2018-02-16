@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactAux from '../../hoc/ReactAux';
+import ReactAux from '../../../../hoc/ReactAux';
 import _ from 'lodash';
-import Image from './Image';
+import Image from './../../Image';
 
-import noProfile from '../../assets/no_profile.png';
+import noProfile from '../../../../assets/no_profile.png';
 import classes from './Credits.css';
 
 const Credits = (props) => {

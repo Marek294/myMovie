@@ -2,9 +2,9 @@ import React from 'react';
 import moment from 'moment';
 import 'moment/min/locales';
 
-import classes from './RightSide.css';
+import classes from './Information.css';
 
-const RightSide = (props) => {
+const Information = (props) => {
     moment.locale('pl');
 
     const networks = props.networks.map(item => {
@@ -28,7 +28,7 @@ const RightSide = (props) => {
     })
 
     return (
-        <div className={classes.RightSide}>
+        <div className={classes.Information}>
             <div className={classes.Info}>
                 <p className={classes.Head}>Kraj</p>
                 <p className={classes.Body}>{props.origin_country.join(', ')}</p>
@@ -69,4 +69,4 @@ const RightSide = (props) => {
     );
 };
 
-export default RightSide;
+export default Information;
