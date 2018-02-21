@@ -1,0 +1,41 @@
+.Credits {
+    width: 100%;
+}
+
+.Credits h1 {
+    margin-top: 2vw;
+    padding-bottom: 1vw;
+    text-align: left;
+    font-size: 2vw;
+    width: 40%;
+    border-bottom: 1px solid #c20114;
+}
+
+.PersonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vw;
+}
+
+.Item img {
+    width: 10vw;
+    height: calc(10vw * 1.5);
+    text-align: center;
+    border-radius: 0.7vw;
+    margin-bottom: 0.7vw;
+}
+
+.Item p {
+    text-align: center;
+    margin: 0;
+    font-weight: 900;
+    font-size: 1vw;
+    width: 10vw;
+}

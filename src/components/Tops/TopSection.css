@@ -81,6 +81,10 @@
 .Overlay p {
     font-size: 0.8vw;
     text-align: left;
+    margin: 1vw 0;
+}
+.Overlay .Description {
+    color: white;
 }
 
 @keyframes textOpacity {
