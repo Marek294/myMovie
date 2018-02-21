@@ -1,0 +1,31 @@
+.Information {
+    margin: 2vw;
+    padding: 2vw;
+    width: 15%;
+    border-left: 1px solid #c20114;
+}
+
+.Info {
+    margin-top: 2vw;
+}
+
+.Info .Head {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1vw;
+}
+
+.Info .Body {
+    margin-top: 0;
+    font-size: 0.7vw;
+    display: flex;
+}
+
+.Info p {
+    text-align: left;
+}
+
+.Info a {
+    color: white;
+    text-decoration: none;
+}

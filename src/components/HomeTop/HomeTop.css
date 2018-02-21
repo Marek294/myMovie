@@ -2,8 +2,39 @@
     width: 100%;
     height: 40vw;
     overflow: hidden;
+    position: relative;
 }
 
 .HomeTop img {
     width: 100%;
+    z-index: -1;
+}
+
+.Content {
+    height: 100%;
+    width: 100%; 
+    position: absolute;
+    top: 0;
+    padding: 8vw 10vw;
+    background: linear-gradient(to left, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 70%);
+}
+
+.Content h1 {
+    font-weight: 900;
+    font-size: 2vw;
+    margin: 0;
+    width: 50%;
+    text-align: left;
+}
+
+.Content h2 {
+    font-weight: 900;
+    font-size: 4vw;
+    margin-bottom: 3vw;
+}
+
+.Content h3 {
+    font-weight: 900;
+    font-size: 2vw;
+    margin: 0;
 }

@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Desktop from './Desktop/Desktop';
+import Mobile from './Mobile/Mobile';
+
+import classes from './MovieDetails.css';
 
 import { getMovieDetails } from '../../../actions/Movie';
 
 class MovieDetails extends Component {
     state = {
         movie: null
+    }
+
+    componentWillReceiveProps(nextProps) {
+        window.location.reload();
     }
 
     componentDidMount() {
@@ -19,7 +27,12 @@ class MovieDetails extends Component {
         return (
             movie &&
                 <div>
-                    <img src={['https://image.tmdb.org/t/p/original',movie.backdrop_path].join('')} alt="" />
+                    <div className={classes.DesktopOnly}>
+                        <Desktop movie={movie} />
+                    </div>
+                    {/* <div className={classes.MobileOnly}>
+                        <Mobile movie={movie} />
+                    </div> */}
                 </div>
         );
     }
