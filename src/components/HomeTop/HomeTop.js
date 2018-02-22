@@ -7,7 +7,6 @@ class HomeTop extends Component {
         const { Upcoming } = this.props;
         const item = Upcoming[0];
 
-        console.log(item);
         return (
             <div className={classes.HomeTop}>
                 <div className={classes.Content}>

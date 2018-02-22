@@ -25,6 +25,7 @@
 }
 
 .Item img {
+    box-shadow: 0 0 10px black;
     width: 10vw;
     height: calc(10vw * 1.5);
     text-align: center;

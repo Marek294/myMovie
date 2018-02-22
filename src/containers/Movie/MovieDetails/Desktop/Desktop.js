@@ -4,7 +4,6 @@ import ReactAux from '../../../../hoc/ReactAux';
 import TopSection from '../../../../components/MovieDetails/TopSection/Desktop/TopSection';
 import Information from '../../../../components/MovieDetails/Information/Desktop/Information';
 import Credits from '../../../../components/MovieDetails/Credits/Desktop/Credits';
-// import Seasons from '../../../../components/TvDetails/Seasons/Desktop/Seasons';
 import Similar from '../../../../components/MovieDetails/Similar/Desktop/Similar';
 import Recommendation from '../../../../components/MovieDetails/Recommendation/Desktop/Recommendation';
 
