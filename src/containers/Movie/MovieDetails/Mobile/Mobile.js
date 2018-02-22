@@ -4,12 +4,11 @@ import ReactAux from '../../../../hoc/ReactAux';
 import MobileSectionNavBar from '../../../../components/MobileSectionNavBar/MobileSectionNavBar';
 import MobileSectionCarousel from '../../../../hoc/MobileSectionCarousel/MobileSectionCarousel';
 import TopSection from '../../../../components/TvDetails/TopSection/Mobile/TopSection';
-import About from '../../../../components/TvDetails/About/Mobile/About';
-import Credits from '../../../../components/TvDetails/Credits/Mobile/Credits';
-import Similar from '../../../../components/TvDetails/Similar/Mobile/Similar';
-import Recommendation from '../../../../components/TvDetails/Recommendation/Mobile/Recommendation';
-import Seasons from '../../../../components/TvDetails/Seasons/Mobile/Seasons';
-import Information from '../../../../components/TvDetails/Information/Mobile/Information';
+import About from '../../../../components/MovieDetails/About/Mobile/About';
+import Information from '../../../../components/MovieDetails/Information/Mobile/Information';
+import Credits from '../../../../components/MovieDetails/Credits/Mobile/Credits';
+import Similar from '../../../../components/MovieDetails/Similar/Mobile/Similar';
+import Recommendation from '../../../../components/MovieDetails/Recommendation/Mobile/Recommendation';
 
 class Mobile extends Component {
     state = {
@@ -33,7 +32,7 @@ class Mobile extends Component {
 
     rightHandler = () => {
         let { active } = this.state;
-        if(active+1 <= 6) active += 1;
+        if(active+1 <= 5) active += 1;
 
         this.setState({
             active
@@ -48,13 +47,10 @@ class Mobile extends Component {
                 <TopSection backdrop_path={movie.backdrop_path} />
                 <MobileSectionNavBar active={this.state.active} >
                     <ReactAux>
-                        <p>O serialu</p>
+                        <p>O filmie</p>
                     </ReactAux>
                     <ReactAux>
                         <p>Obsada</p>
-                    </ReactAux>
-                    <ReactAux>
-                        <p>Sezony</p>
                     </ReactAux>
                     <ReactAux>
                         <p>Podobne</p>
@@ -69,7 +65,6 @@ class Mobile extends Component {
                 <MobileSectionCarousel leftHandler={this.leftHandler} rightHandler={this.rightHandler} active={this.state.active}>
                     <About movie={movie} />
                     <Credits movie={movie} />
-                    <Seasons movie={movie} />
                     <Similar movie={movie} />
                     <Recommendation movie={movie} />
                     <Information movie={movie} />

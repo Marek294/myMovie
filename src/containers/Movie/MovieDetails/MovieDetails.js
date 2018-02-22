@@ -30,9 +30,9 @@ class MovieDetails extends Component {
                     <div className={classes.DesktopOnly}>
                         <Desktop movie={movie} />
                     </div>
-                    {/* <div className={classes.MobileOnly}>
+                    <div className={classes.MobileOnly}>
                         <Mobile movie={movie} />
-                    </div> */}
+                    </div>
                 </div>
         );
     }

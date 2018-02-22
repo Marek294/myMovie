@@ -28,18 +28,14 @@ class MobileSectionCarousel extends Component {
         const { carouselViewport } = this.refs;
         const { timeToScroll } = this.state;
 
-        if(nextProps.active === this.props.active) {
-            carouselViewport.scrollLeft = 0;
-        } else {
-            const newPosition = Math.round(carouselViewport.offsetWidth) * (nextProps.active-1);
+        const newPosition = Math.round(carouselViewport.offsetWidth) * (nextProps.active-1);
 
-            scrollTo({
-                element: carouselViewport, 
-                to: newPosition, 
-                duration: timeToScroll, 
-                scrollDirection: 'scrollLeft'
-            });
-        }
+        scrollTo({
+            element: carouselViewport, 
+            to: newPosition, 
+            duration: timeToScroll, 
+            scrollDirection: 'scrollLeft'
+        });
     }
     
     touchStart = (e) => {
