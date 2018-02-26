@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import ReactSwipe from 'react-swipe';
 
 import ReactAux from '../../../../hoc/ReactAux';
 import MobileSectionNavBar from '../../../../components/MobileSectionNavBar/MobileSectionNavBar';
-import MobileSectionCarousel from '../../../../hoc/MobileSectionCarousel/MobileSectionCarousel';
 import TopSection from '../../../../components/TvDetails/TopSection/Mobile/TopSection';
 import About from '../../../../components/TvDetails/About/Mobile/About';
 import Credits from '../../../../components/TvDetails/Credits/Mobile/Credits';
@@ -13,30 +13,12 @@ import Information from '../../../../components/TvDetails/Information/Mobile/Inf
 
 class Mobile extends Component {
     state = {
-        active: 1
+        active: 0
     }
 
-    componentWillMount() {
+    onSwipe = (index, element) => {
         this.setState({
-            active: 1
-        })
-    }
-
-    leftHandler = () => {
-        let { active } = this.state;
-        if(active-1 >= 1) active -= 1;
-
-        this.setState({
-            active
-        });
-    }
-
-    rightHandler = () => {
-        let { active } = this.state;
-        if(active+1 <= 6) active += 1;
-
-        this.setState({
-            active
+            active: index
         });
     }
 
@@ -66,14 +48,26 @@ class Mobile extends Component {
                         <p>Informacje</p>
                     </ReactAux>
                 </MobileSectionNavBar>
-                <MobileSectionCarousel leftHandler={this.leftHandler} rightHandler={this.rightHandler} active={this.state.active}>
+                <ReactSwipe className="carousel" swipeOptions={{continuous: false, callback: this.onSwipe}}>
+                    <div>
                     <About tv={tv} />
+                    </div>
+                    <div>
                     <Credits tv={tv} />
+                    </div>
+                    <div>
                     <Seasons tv={tv} />
+                    </div>
+                    <div>
                     <Similar tv={tv} />
+                    </div>
+                    <div>
                     <Recommendation tv={tv} />
+                    </div>
+                    <div>
                     <Information tv={tv} />
-                </MobileSectionCarousel>
+                    </div>
+                </ReactSwipe>
             </ReactAux>
         );
     }

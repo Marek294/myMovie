@@ -28,7 +28,7 @@ class MobileSectionCarousel extends Component {
         const { carouselViewport } = this.refs;
         const { timeToScroll } = this.state;
 
-        const newPosition = Math.round(carouselViewport.offsetWidth) * (nextProps.active-1);
+        const newPosition = Math.round(carouselViewport.offsetWidth) * (nextProps.active);
 
         scrollTo({
             element: carouselViewport, 

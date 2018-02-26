@@ -15,7 +15,7 @@ class MobileSectionNavBar extends Component {
 
         return (
             <div className={classes.MobileNav}>
-                <Carousel activeHandler={this.props.activeHandler} active={this.props.active} >
+                <Carousel active={this.props.active} >
                     <div className={classes.Dummy}></div>
                     {data}
                     <div className={classes.Dummy}></div>
