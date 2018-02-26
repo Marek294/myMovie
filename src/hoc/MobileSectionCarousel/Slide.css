@@ -1,4 +1,6 @@
 .Slide {
+    height: 90vh;
+    overflow: scroll;
     white-space: normal;
     transition: all 500ms ease;
     transform: translateZ(0);

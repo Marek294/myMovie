@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    padding-left: 50px;
+    padding-left: 20px;
+    width: 90%;
 }
 
 .About > div {
@@ -12,6 +13,7 @@
 .About img {
     box-shadow: 0 0 10px black;
     width: 100px;
+    height: calc(100px * 1.5);
 }
 
 .About .VoteAverage {
@@ -28,7 +30,6 @@
 
 .About .Info {
     margin: 10px;
-    width: 200px;
 }
 
 .About h1 {
@@ -49,7 +50,6 @@
 .About p {
     text-align: left;
     margin: 5px 0 20px;
-    width: 250px;
 }
 
 .About .title {

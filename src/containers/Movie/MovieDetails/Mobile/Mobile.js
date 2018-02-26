@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import ReactSwipe from 'react-swipe';
 
 import ReactAux from '../../../../hoc/ReactAux';
 import MobileSectionNavBar from '../../../../components/MobileSectionNavBar/MobileSectionNavBar';
-import MobileSectionCarousel from '../../../../hoc/MobileSectionCarousel/MobileSectionCarousel';
 import TopSection from '../../../../components/TvDetails/TopSection/Mobile/TopSection';
 import About from '../../../../components/MovieDetails/About/Mobile/About';
 import Information from '../../../../components/MovieDetails/Information/Mobile/Information';
@@ -12,30 +12,12 @@ import Recommendation from '../../../../components/MovieDetails/Recommendation/M
 
 class Mobile extends Component {
     state = {
-        active: 1
+        active: 0
     }
 
-    componentWillMount() {
+    onSwipe = (index, element) => {
         this.setState({
-            active: 1
-        })
-    }
-
-    leftHandler = () => {
-        let { active } = this.state;
-        if(active-1 >= 1) active -= 1;
-
-        this.setState({
-            active
-        });
-    }
-
-    rightHandler = () => {
-        let { active } = this.state;
-        if(active+1 <= 5) active += 1;
-
-        this.setState({
-            active
+            active: index
         });
     }
 
@@ -62,13 +44,23 @@ class Mobile extends Component {
                         <p>Informacje</p>
                     </ReactAux>
                 </MobileSectionNavBar>
-                <MobileSectionCarousel leftHandler={this.leftHandler} rightHandler={this.rightHandler} active={this.state.active}>
+                <ReactSwipe className="carousel" swipeOptions={{continuous: false, callback: this.onSwipe}}>
+                    <div>
                     <About movie={movie} />
+                    </div>
+                    <div>
                     <Credits movie={movie} />
+                    </div>
+                    <div>
                     <Similar movie={movie} />
+                    </div>
+                    <div>
                     <Recommendation movie={movie} />
+                    </div>
+                    <div>
                     <Information movie={movie} />
-                </MobileSectionCarousel>
+                    </div>
+                </ReactSwipe>
             </ReactAux>
         );
     }
