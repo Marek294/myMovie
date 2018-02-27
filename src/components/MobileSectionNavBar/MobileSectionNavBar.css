@@ -1,13 +1,16 @@
+.MobileNav {
+    height: 7vh;
+}
 .Dummy {
     height: 1px;
 }
 
 .Div {
-    margin: 10px;
+    margin: 7px;
 }
 
 p {
-    font-size: 3vw;
+    font-size: 12px;
     margin: 0;
     text-align: center;
 }

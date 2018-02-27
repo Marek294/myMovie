@@ -31,7 +31,7 @@ const Seasons = (props) => {
     })
     return (
         <div className={classes.Seasons}>
-            {seasons.length > 0 && seasons}
+            {seasons.length > 0 ? seasons : <h1>Brak pozycji</h1>}
         </div>
     );
 };

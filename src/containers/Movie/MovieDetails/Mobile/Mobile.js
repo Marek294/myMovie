@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactSwipe from 'react-swipe';
+import scrollTo from '../../../../utils/scrollTop';
 
 import ReactAux from '../../../../hoc/ReactAux';
 import MobileSectionNavBar from '../../../../components/MobileSectionNavBar/MobileSectionNavBar';
@@ -10,6 +11,8 @@ import Credits from '../../../../components/MovieDetails/Credits/Mobile/Credits'
 import Similar from '../../../../components/MovieDetails/Similar/Mobile/Similar';
 import Recommendation from '../../../../components/MovieDetails/Recommendation/Mobile/Recommendation';
 
+import classes from './Mobile.css';
+
 class Mobile extends Component {
     state = {
         active: 0
@@ -18,6 +21,14 @@ class Mobile extends Component {
     onSwipe = (index, element) => {
         this.setState({
             active: index
+        });
+    }
+
+    onScroll = () => {
+        scrollTo({
+            element: window, 
+            to: 1000, 
+            duration: 200, 
         });
     }
 
@@ -45,19 +56,19 @@ class Mobile extends Component {
                     </ReactAux>
                 </MobileSectionNavBar>
                 <ReactSwipe className="carousel" swipeOptions={{continuous: false, callback: this.onSwipe}}>
-                    <div>
+                    <div className={classes.slide} onScroll={this.onScroll}>
                     <About movie={movie} />
                     </div>
-                    <div>
+                    <div className={classes.slide} onScroll={this.onScroll}>
                     <Credits movie={movie} />
                     </div>
-                    <div>
+                    <div className={classes.slide} onScroll={this.onScroll}>
                     <Similar movie={movie} />
                     </div>
-                    <div>
+                    <div className={classes.slide} onScroll={this.onScroll}>
                     <Recommendation movie={movie} />
                     </div>
-                    <div>
+                    <div className={classes.slide} onScroll={this.onScroll}>
                     <Information movie={movie} />
                     </div>
                 </ReactSwipe>

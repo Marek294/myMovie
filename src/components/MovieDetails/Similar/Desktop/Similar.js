@@ -7,7 +7,6 @@ import classes from './Similar.css';
 
 const Similar = (props) => {
     const similar = props.similar.results.map((item,i) => {
-        console.log(item.poster_path,item.original_title);
         return (
             <Link key={i} to={"/movie/" + item.id} >
                 <div className={classes.Item}>

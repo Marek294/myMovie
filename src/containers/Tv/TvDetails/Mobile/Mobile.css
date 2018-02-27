@@ -1,0 +1,5 @@
+.slide {
+    height: 90vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
