@@ -23,7 +23,7 @@ const Recommendation = (props) => {
 
     return (
         <div className={classes.Container}>
-            {recommendations}
+            {recommendations.length > 0 ? recommendations : <h1>Brak pozycji</h1>}
         </div>
     );
 };

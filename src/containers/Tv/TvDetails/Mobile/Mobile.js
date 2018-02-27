@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactSwipe from 'react-swipe';
+import scrollTo from '../../../../utils/scrollTop';
 
 import ReactAux from '../../../../hoc/ReactAux';
 import MobileSectionNavBar from '../../../../components/MobileSectionNavBar/MobileSectionNavBar';
@@ -10,6 +11,8 @@ import Similar from '../../../../components/TvDetails/Similar/Mobile/Similar';
 import Recommendation from '../../../../components/TvDetails/Recommendation/Mobile/Recommendation';
 import Seasons from '../../../../components/TvDetails/Seasons/Mobile/Seasons';
 import Information from '../../../../components/TvDetails/Information/Mobile/Information';
+
+import classes from './Mobile.css';
 
 class Mobile extends Component {
     state = {
@@ -22,9 +25,17 @@ class Mobile extends Component {
         });
     }
 
+    onScroll = () => {
+        scrollTo({
+            element: window, 
+            to: 1000, 
+            duration: 200, 
+        });
+    }
+
     render() {
         const { tv } = this.props;
-    
+
         return (
             <ReactAux>
                 <TopSection backdrop_path={tv.backdrop_path} />
@@ -48,24 +59,24 @@ class Mobile extends Component {
                         <p>Informacje</p>
                     </ReactAux>
                 </MobileSectionNavBar>
-                <ReactSwipe className="carousel" swipeOptions={{continuous: false, callback: this.onSwipe}}>
-                    <div>
-                    <About tv={tv} />
+                <ReactSwipe swipeOptions={{ continuous: false, callback: this.onSwipe }}>
+                    <div className={classes.slide} onScroll={this.onScroll}>
+                        <About tv={tv} />
                     </div>
-                    <div>
-                    <Credits tv={tv} />
+                    <div className={classes.slide} onScroll={this.onScroll}>
+                        <Credits tv={tv} />
                     </div>
-                    <div>
-                    <Seasons tv={tv} />
+                    <div className={classes.slide} onScroll={this.onScroll}>
+                        <Seasons tv={tv} />
                     </div>
-                    <div>
-                    <Similar tv={tv} />
+                    <div className={classes.slide} onScroll={this.onScroll}>
+                        <Similar tv={tv} />
                     </div>
-                    <div>
-                    <Recommendation tv={tv} />
+                    <div className={classes.slide} onScroll={this.onScroll}>
+                        <Recommendation tv={tv} />
                     </div>
-                    <div>
-                    <Information tv={tv} />
+                    <div className={classes.slide} onScroll={this.onScroll}>
+                        <Information tv={tv} />
                     </div>
                 </ReactSwipe>
             </ReactAux>

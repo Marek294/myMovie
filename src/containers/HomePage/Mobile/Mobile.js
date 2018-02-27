@@ -21,7 +21,6 @@ class Mobile extends Component {
     }
 
     render() {
-        console.log(this.state.active);
         return (
             <ReactAux>
                 <HomeTop Upcoming={this.props.Upcoming}/>

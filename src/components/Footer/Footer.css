@@ -2,7 +2,6 @@
     align-self: flex-end;
     width: 100%;
     background: black;
-    padding: 1vw 0;
 }
 
 .Footer p {
@@ -13,6 +12,12 @@
 }
 
 @media (max-width: 499px) {
+    .Footer {
+        display: flex;
+        align-items: center;
+        height: 3vh;
+    }
+
     .Footer p {
         font-size: 10px;
     }
