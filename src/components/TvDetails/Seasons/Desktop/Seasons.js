@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import moment from 'moment';
 import 'moment/min/locales';
-import Image from '../../Image';
+import Image from '../../../../hoc/Image';
 
 import noPoster from '../../../../assets/no_poster.jpg';
 import classes from './Seasons.css';

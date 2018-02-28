@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Image from '../../Image';
+import Image from '../../../../hoc/Image';
 
 import noPoster from '../../../../assets/no_poster.jpg';
 import classes from './Similar.css';
