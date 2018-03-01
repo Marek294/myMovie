@@ -21,5 +21,8 @@ export default {
         getMostPopular: () => instance.get('movie/popular?page=1').then(res => res.data.results),
         getMovieDetails: (id) => instance.get(`/movie/${id}?append_to_response=credits%2Csimilar%2Crecommendations%2Ckeywords`).then(res => res.data),
         getSearchMovies: (query) => instance.get(`/search/movie?query=${query}`).then(res => res.data.results)
-    } 
+    },
+    Person: {
+        getPersonDetails: (id) => instance.get(`/person/${id}?append_to_response=movie_credits%2Ctv_credits%2Cimages`).then(res => res.data),
+    }
 }

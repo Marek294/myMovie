@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactAux from '../../../../hoc/ReactAux';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import Image from '../../../../hoc/Image';
 
@@ -11,21 +12,25 @@ const Credits = (props) => {
 
     const created_by = tv.created_by.map((item,i) => {
         return (
-            <div key={i} className={classes.Item}>
-                <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
-                <p>{item.name}</p>
-            </div>
+            <Link key={i} to={"/person/" + item.id} >
+                <div key={i} className={classes.Item}>
+                    <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
+                    <p>{item.name}</p>
+                </div>
+            </Link>
         )
     })
 
     let cast = _.orderBy(tv.credits.cast, ['order'], ['asc']);
     cast = cast.map((item,i) => {
         return (
-            <div key={i} className={classes.Item}>
-                <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
-                <p>{item.name}</p>
-                <p style={{fontWeight: 'normal'}}>{item.character}</p>
-            </div>
+            <Link key={i} to={"/person/" + item.id} >
+                <div key={i} className={classes.Item}>
+                    <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
+                    <p>{item.name}</p>
+                    <p style={{fontWeight: 'normal'}}>{item.character}</p>
+                </div>
+            </Link>
         )
     })
 

@@ -2,6 +2,11 @@
     padding: 0 20px;
 }
 
+.Credits a {
+    color: white;
+    text-decoration: none;
+}
+
 .Credits h1 {
     margin-top: 20px;
     padding-bottom: 1vw;

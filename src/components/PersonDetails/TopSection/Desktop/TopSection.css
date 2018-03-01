@@ -1,0 +1,78 @@
+.Background {
+    position: relative;
+    height: 40vw;
+    overflow: hidden;
+    background: #2c2c2c;
+}
+
+.Background .Overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.TopSection {
+    position: relative;
+}
+
+.TopSection .Details {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Details img {
+    height: 70%;
+    border-radius: 2vw;
+}
+
+.Details .Info {
+    margin: 5vw;
+    height: 70%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Details .Info h2 {
+    font-size: 2vw;
+    margin-bottom: 50px;
+}
+
+.Details .Info p {
+    margin: 10px 0;
+    font-size: 0.8vw;
+    text-align: left;
+}
+
+.Details .Info a {
+    color: white;
+    font-size: 1vw;
+    text-align: left;
+    text-decoration: none;
+    transition: all 500ms;
+}
+
+.Details .Info a:hover {
+    color: #c20114;
+}
+
+.Details .Info div {
+    margin: 20px 0;
+}
+
+.Details .Info div p:first-child {
+    font-weight: 900;
+    font-size: 1vw;
+    margin: 0;
+}
