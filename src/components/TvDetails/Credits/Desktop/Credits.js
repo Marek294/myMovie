@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReactAux from '../../../../hoc/ReactAux';
 import _ from 'lodash';
 import Image from '../../../../hoc/Image';
@@ -9,31 +10,43 @@ import classes from './Credits.css';
 const Credits = (props) => {
     const created_by = props.created_by.map((item,i) => {
         return (
-            <div key={i} className={classes.Item}>
-                <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
-                <p>{item.name}</p>
-            </div>
+            <Link key={i} to={"/person/" + item.id} >
+                <div key={i} className={classes.Item}>
+                    <div className={classes.ImageContainer}>
+                        <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
+                    </div>
+                    <p>{item.name}</p>
+                </div>
+            </Link>
         )
     })
 
     let cast = _.orderBy(props.credits.cast, ['order'], ['asc']);
     cast = cast.map((item,i) => {
         return (
-            <div key={i} className={classes.Item}>
-                <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
-                <p>{item.name}</p>
-                <p style={{fontWeight: 'normal'}}>{item.character}</p>
-            </div>
+            <Link key={i} to={"/person/" + item.id} >
+                <div key={i} className={classes.Item}>
+                    <div className={classes.ImageContainer}>
+                        <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
+                    </div>
+                    <p>{item.name}</p>
+                    <p style={{fontWeight: 'normal'}}>{item.character}</p>
+                </div>
+            </Link>
         )
     })
 
     const crew = props.credits.crew.map((item,i) => {
         return (
-            <div key={i} className={classes.Item}>
-                <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
-                <p>{item.name}</p>
-                <p style={{fontWeight: 'normal'}}>{item.job}</p>
-            </div>
+            <Link key={i} to={"/person/" + item.id} >
+                <div key={i} className={classes.Item}>
+                    <div className={classes.ImageContainer}>
+                        <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
+                    </div>
+                    <p>{item.name}</p>
+                    <p style={{fontWeight: 'normal'}}>{item.job}</p>
+                </div>
+            </Link>
         )
     })
 
