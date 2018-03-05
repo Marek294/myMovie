@@ -31,9 +31,9 @@ class MobileCarousel extends Component {
 
         const newPosition = Math.round(carouselViewport.offsetWidth / 3) * (nextProps.active);
         scrollTo({
-            element: carouselViewport, 
-            to: newPosition, 
-            duration: timeToScroll, 
+            element: carouselViewport,
+            to: newPosition,
+            duration: timeToScroll,
             scrollDirection: 'scrollLeft'
         });
     }
@@ -41,7 +41,7 @@ class MobileCarousel extends Component {
     onResize = () => {
         const { carouselViewport } = this.refs;
         const { active } = this.props;
- 
+
         carouselViewport.scrollLeft = Math.round(carouselViewport.offsetWidth / 3) * (active);
     }
 
@@ -60,7 +60,7 @@ class MobileCarousel extends Component {
     //             disabledScroll: false
     //         })
     //     }, timeToScroll);
-        
+
     //     scrollTo({
     //         element: carouselViewport, 
     //         to: newPosition, 
@@ -84,7 +84,7 @@ class MobileCarousel extends Component {
     //             disabledScroll: false
     //         })
     //     }, timeToScroll);
-        
+
     //     scrollTo({
     //         element: carouselViewport, 
     //         to: newPosition, 
@@ -94,14 +94,14 @@ class MobileCarousel extends Component {
     // }
 
     renderSlides(data) {
-        return data.map((item,i) => {
-            if(Array.isArray(item)) return this.renderSlides(item);
+        return data.map((item, i) => {
+            if (Array.isArray(item)) return this.renderSlides(item);
             else
-            return (<Slide key={i}
-                item={item}
-                width={100/this.state.slidesInView}
-                index={i}
-            />)
+                return (<Slide key={i}
+                    item={item}
+                    width={100 / this.state.slidesInView}
+                    index={i}
+                />)
         })
     }
 
@@ -112,7 +112,7 @@ class MobileCarousel extends Component {
                     {this.renderSlides(this.props.children)}
                 </div>
                 <div className={classes.Border} >
-                    <div style={{ width: [100/this.state.slidesInView,'%'].join('')}} className={classes.ActiveBorder} />
+                    <div style={{ width: [100 / this.state.slidesInView, '%'].join('') }} className={classes.ActiveBorder} />
                 </div>
             </div>
         );

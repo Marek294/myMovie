@@ -1,0 +1,52 @@
+.About {
+    display: flex;
+    flex-direction: column;
+    color: var(--grey);
+}
+
+.About > div {
+    display: flex;
+}
+
+.About img {
+    --width: 100px;
+    width: var(--width);
+    height: calc(var(--width) * 1.5);
+}
+
+.About .Info {
+    display: flex;
+    flex-direction: column;
+}
+
+.About h2 {
+    font-size: 20px;
+    padding: 30px 0 0 20px;
+    font-weight: 900;
+}
+
+.About .Info p {
+    font-size: 10px;
+    text-align: left;
+}
+
+.About .Info a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    max-width: 150px;
+    padding: 5px 0;
+    border: 1px solid var(--red);
+    font-size: 12px;
+    color: var(--grey);
+}
+
+.About .Info div {
+    margin-top: 20px;
+}
+
+.About .Info div p:first-child {
+    font-weight: 900;
+    font-size: 12px;
+    margin: 0;
+}

@@ -1,6 +1,7 @@
 .CarouselContainer {
     position: relative;
     width: 100%;
+    color: var(--grey);
 }
 
 .CarouselViewport {
@@ -21,14 +22,14 @@
 
 .CarouselContainer .Border {
     width: 100%;
-    border-bottom: 1px solid #c20114;
-    position:relative;
+    border-bottom: 1px solid var(--red);
+    position: relative;
 }
 
 .CarouselContainer .ActiveBorder {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    border-bottom: 2px solid #c20114;
+    border-bottom: 2px solid var(--red);
     bottom: 0;
 }

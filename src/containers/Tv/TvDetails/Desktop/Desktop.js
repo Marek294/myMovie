@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import ReactAux from '../../../../hoc/ReactAux';
-import TopSection from '../../../../components/TvDetails/TopSection/Desktop/TopSection';
-import Information from '../../../../components/TvDetails/Information/Desktop/Information';
-import Credits from '../../../../components/TvDetails/Credits/Desktop/Credits';
-import Seasons from '../../../../components/TvDetails/Seasons/Desktop/Seasons';
-import Similar from '../../../../components/TvDetails/Similar/Desktop/Similar';
-import Recommendation from '../../../../components/TvDetails/Recommendation/Desktop/Recommendation';
+import TopSection from '../../../../components/Details/TvDetails/TopSection/Desktop/TopSection';
+import Information from '../../../../components/Details/TvDetails/Information/Desktop/Information';
+import Credits from '../../../../components/Details/TvDetails/Credits/Desktop/Credits';
+import Seasons from '../../../../components/Details/TvDetails/Seasons/Desktop/Seasons';
+import Similar from '../../../../components/Details/TvDetails/Similar/Desktop/Similar';
+import Recommendation from '../../../../components/Details/TvDetails/Recommendation/Desktop/Recommendation';
 
 import classes from './Desktop.css';
 

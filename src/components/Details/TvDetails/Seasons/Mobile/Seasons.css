@@ -1,0 +1,46 @@
+.Seasons {
+    display: flex;
+    flex-direction: column;
+    color: var(--grey);
+}
+
+.Item {
+    display: flex;
+    margin: 10px 0;
+}
+
+.Item img {
+    --width: 100px;
+    width: var(--width);
+    height: calc(var(--width) * 1.5);
+}
+
+.Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    margin-left: 10px;
+}
+
+.Info h1 {
+    text-align: left;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.Info .YearAndEpisodeCount {
+    display: flex;
+}
+
+.Info .YearAndEpisodeCount p {
+    margin: 0;
+    margin-right: 2px;
+}
+
+.Info p {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 10px;
+}

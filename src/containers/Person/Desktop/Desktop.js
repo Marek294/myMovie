@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import ReactAux from '../../../hoc/ReactAux';
-import TopSection from '../../../components/PersonDetails/TopSection/Desktop/TopSection';
-import Tv from '../../../components/PersonDetails/Tv/Desktop/Tv';
-import Movie from '../../../components/PersonDetails/Movie/Desktop/Movie';
-import Graphic from '../../../components/PersonDetails/Graphic/Desktop/Graphic';
+import TopSection from '../../../components/Details/PersonDetails/TopSection/Desktop/TopSection';
+import Tv from '../../../components/Details/PersonDetails/Tv/Desktop/Tv';
+import Movie from '../../../components/Details/PersonDetails/Movie/Desktop/Movie';
+import Graphic from '../../../components/Details/PersonDetails/Graphic/Desktop/Graphic';
 
 import classes from './Desktop.css';
 

@@ -4,10 +4,10 @@ import scrollTo from '../../../utils/scrollTop';
 
 import ReactAux from '../../../hoc/ReactAux';
 import MobileSectionNavBar from '../../../components/MobileSectionNavBar/MobileSectionNavBar';
-import About from '../../../components/PersonDetails/About/Mobile/About';
-import Tv from '../../../components/PersonDetails/Tv/Mobile/Tv';
-import Movie from '../../../components/PersonDetails/Movie/Mobile/Movie';
-import Graphic from '../../../components/PersonDetails/Graphic/Mobile/Graphic';
+import About from '../../../components/Details/PersonDetails/About/Mobile/About';
+import Tv from '../../../components/Details/PersonDetails/Tv/Mobile/Tv';
+import Movie from '../../../components/Details/PersonDetails/Movie/Mobile/Movie';
+import Graphic from '../../../components/Details/PersonDetails/Graphic/Mobile/Graphic';
 
 import classes from './Mobile.css';
 

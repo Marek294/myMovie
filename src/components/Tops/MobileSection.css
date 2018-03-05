@@ -2,30 +2,25 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.Container a {
-    margin-top: 20px;
-    text-decoration: none;
+    margin: 10px 0;
 }
 
 .Item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
     width: 90px;
     margin: 10px;
 }
 
 .Item img {
     width: 100%;
-    box-shadow: 0 0 10px black;
+    margin-bottom: 5px;
 }
 
-.Description {
-    width: 100%;
-}
-
-.Description p {
+.Item p {
     text-align: center;
     font-size: 10px;
-    color: rgba(255,255,255,0.5);
+    color: var(--grey);
     font-weight: 900;
 }

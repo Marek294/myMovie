@@ -1,0 +1,56 @@
+.About {
+    display: flex;
+    flex-direction: column;
+    color: var(--grey);
+}
+
+.About > div {
+    display: flex;
+}
+
+.About img {
+    --width: 100px;
+    width: var(--width);
+    height: calc(var(--width) * 1.5);
+}
+
+.About .VoteAverage {
+    display: flex;
+    align-items: center;
+}
+
+.About i {
+    margin-left: 10px;
+    font-size: 15px;
+    color: var(--gold);
+    display: flex;
+}
+
+.About .Info {
+    margin: 10px;
+}
+
+.About h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.About h2 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.About > h1 {
+    margin-top: 20px;
+    font-weight: 900;
+}
+
+.About p {
+    text-align: left;
+    margin: 5px 0 20px;
+}
+
+.About .title {
+    font-size: 20px;
+    margin-top: 20px;
+}

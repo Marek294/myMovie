@@ -1,0 +1,31 @@
+.Container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Container a {
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.Item {
+    --width: 90px;
+    width: var(--width);
+    margin: 10px;
+}
+
+.Item img {
+    width: var(--width);
+    height: calc(var(--width) * 1.5);
+}
+
+.Description {
+    width: 100%;
+}
+
+.Description p {
+    text-align: center;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 900;
+}

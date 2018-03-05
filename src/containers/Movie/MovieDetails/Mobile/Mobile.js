@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import ReactSwipe from 'react-swipe';
-import scrollTo from '../../../../utils/scrollTop';
 
+import scrollTo from '../../../../utils/scrollTop';
 import ReactAux from '../../../../hoc/ReactAux';
 import MobileSectionNavBar from '../../../../components/MobileSectionNavBar/MobileSectionNavBar';
-import TopSection from '../../../../components/TvDetails/TopSection/Mobile/TopSection';
-import About from '../../../../components/MovieDetails/About/Mobile/About';
-import Information from '../../../../components/MovieDetails/Information/Mobile/Information';
-import Credits from '../../../../components/MovieDetails/Credits/Mobile/Credits';
-import Similar from '../../../../components/MovieDetails/Similar/Mobile/Similar';
-import Recommendation from '../../../../components/MovieDetails/Recommendation/Mobile/Recommendation';
+import TopSection from '../../../../components/Details/TvDetails/TopSection/Mobile/TopSection';
+import About from '../../../../components/Details/MovieDetails/About/Mobile/About';
+import Information from '../../../../components/Details/MovieDetails/Information/Mobile/Information';
+import Credits from '../../../../components/Details/MovieDetails/Credits/Mobile/Credits';
+import Similar from '../../../../components/Details/MovieDetails/Similar/Mobile/Similar';
+import Recommendation from '../../../../components/Details/MovieDetails/Recommendation/Mobile/Recommendation';
 
 import classes from './Mobile.css';
 
 class Mobile extends Component {
     state = {
-        active: 0
+        active: 0,
     }
 
     onSwipe = (index, element) => {
@@ -38,7 +38,7 @@ class Mobile extends Component {
         return (
             <ReactAux>
                 <TopSection backdrop_path={movie.backdrop_path} />
-                <MobileSectionNavBar active={this.state.active} >
+                <MobileSectionNavBar active={this.state.active}>
                     <ReactAux>
                         <p>O filmie</p>
                     </ReactAux>
@@ -55,7 +55,7 @@ class Mobile extends Component {
                         <p>Informacje</p>
                     </ReactAux>
                 </MobileSectionNavBar>
-                <ReactSwipe className="carousel" swipeOptions={{continuous: false, callback: this.onSwipe}}>
+                <ReactSwipe className="carousel" swipeOptions={{continuous: false, callback: this.onSwipe }}>
                     <div className={classes.slide} onScroll={this.onScroll}>
                     <About movie={movie} />
                     </div>

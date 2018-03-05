@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 import ReactAux from '../../../../hoc/ReactAux';
-import TopSection from '../../../../components/MovieDetails/TopSection/Desktop/TopSection';
-import Information from '../../../../components/MovieDetails/Information/Desktop/Information';
-import Credits from '../../../../components/MovieDetails/Credits/Desktop/Credits';
-import Similar from '../../../../components/MovieDetails/Similar/Desktop/Similar';
-import Recommendation from '../../../../components/MovieDetails/Recommendation/Desktop/Recommendation';
+import TopSection from '../../../../components/Details/MovieDetails/TopSection/Desktop/TopSection';
+import Information from '../../../../components/Details/MovieDetails/Information/Desktop/Information';
+import Credits from '../../../../components/Details/MovieDetails/Credits/Desktop/Credits';
+import Similar from '../../../../components/Details/MovieDetails/Similar/Desktop/Similar';
+import Recommendation from '../../../../components/Details/MovieDetails/Recommendation/Desktop/Recommendation';
 
 import classes from './Desktop.css';
 

@@ -9,6 +9,8 @@ import MovieDetails from './containers/Movie/MovieDetails/MovieDetails';
 import TvDetails from './containers/Tv/TvDetails/TvDetails';
 import PersonDetails from './containers/Person/PersonDetails';
 
+import './colors.css';
+
 class App extends Component {
   render() {
     return (

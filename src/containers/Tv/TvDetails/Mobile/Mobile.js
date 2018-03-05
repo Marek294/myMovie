@@ -4,13 +4,13 @@ import scrollTo from '../../../../utils/scrollTop';
 
 import ReactAux from '../../../../hoc/ReactAux';
 import MobileSectionNavBar from '../../../../components/MobileSectionNavBar/MobileSectionNavBar';
-import TopSection from '../../../../components/TvDetails/TopSection/Mobile/TopSection';
-import About from '../../../../components/TvDetails/About/Mobile/About';
-import Credits from '../../../../components/TvDetails/Credits/Mobile/Credits';
-import Similar from '../../../../components/TvDetails/Similar/Mobile/Similar';
-import Recommendation from '../../../../components/TvDetails/Recommendation/Mobile/Recommendation';
-import Seasons from '../../../../components/TvDetails/Seasons/Mobile/Seasons';
-import Information from '../../../../components/TvDetails/Information/Mobile/Information';
+import TopSection from '../../../../components/Details/TvDetails/TopSection/Mobile/TopSection';
+import About from '../../../../components/Details/TvDetails/About/Mobile/About';
+import Credits from '../../../../components/Details/TvDetails/Credits/Mobile/Credits';
+import Similar from '../../../../components/Details/TvDetails/Similar/Mobile/Similar';
+import Recommendation from '../../../../components/Details/TvDetails/Recommendation/Mobile/Recommendation';
+import Seasons from '../../../../components/Details/TvDetails/Seasons/Mobile/Seasons';
+import Information from '../../../../components/Details/TvDetails/Information/Mobile/Information';
 
 import classes from './Mobile.css';
 

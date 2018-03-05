@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Loader from '../../../components/Loader/Loader';
-import Image from '../../../hoc/Image';
 
+import Loader from '../../../components/Loader/Loader';
+import Image from '../../../hoc/Image/Image';
 import noPoster from '../../../assets/no_poster.jpg';
 
 import { getSearchTV } from '../../../actions/Tv';
