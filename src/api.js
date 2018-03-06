@@ -24,5 +24,6 @@ export default {
     },
     Person: {
         getPersonDetails: (id) => instance.get(`/person/${id}?append_to_response=movie_credits%2Ctv_credits%2Cimages`).then(res => res.data),
+        getSearchPersons: (query) => instance.get(`/search/person?query=${query}`).then(res => res.data.results)
     }
 }

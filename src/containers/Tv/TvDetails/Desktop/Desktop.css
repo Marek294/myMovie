@@ -11,7 +11,7 @@
 }
 
 .LeftSide .Nav {
-    border-bottom: 1px solid #c20114;
+    border-bottom: 1px solid var(--red);
     width: 90%;
 }
 
@@ -32,11 +32,11 @@
 
 .NavItem:hover {
     cursor: pointer;
-    color: #c20114;
+    color: var(--red);
 }
 
 .Active {
-    color: #c20114;
+    color: var(--red);
 }
 
 .Body {

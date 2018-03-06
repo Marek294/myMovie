@@ -32,7 +32,6 @@
 
 .Details img {
     height: 70%;
-    border-radius: 2vw;
 }
 
 .Details .Info {
@@ -63,8 +62,19 @@
     transition: all 500ms;
 }
 
+.Details .Info a {
+    display: flex;
+    justify-content: center;
+    max-width: 250px;
+    color: white;
+    text-decoration: none;
+    padding: 7px 0;
+    border: 1px solid var(--red);
+    transition: all 500ms;
+}
+
 .Details .Info a:hover {
-    color: #c20114;
+    background: var(--red);
 }
 
 .Details .Info div {

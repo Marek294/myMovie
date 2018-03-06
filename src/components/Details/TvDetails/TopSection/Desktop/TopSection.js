@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Image from '../../../../../hoc/Image/Image';
+import noPoster from '../../../../../assets/no_poster.jpg';
 import classes from './TopSection.css';
 
 const TopSection = (props) => {
@@ -10,7 +12,7 @@ const TopSection = (props) => {
                 <div className={classes.Overlay}/>
             </div>
             <div className={classes.Details}>
-                <img src={['https://image.tmdb.org/t/p/original',props.poster_path].join('')} alt="" />
+                <Image src={['https://image.tmdb.org/t/p/original/',props.poster_path].join('')} default={noPoster} alt="" shadow/>
                 <div className={classes.Info}>
                     <div className={classes.VoteAverage}>
                         <h1>{props.vote_average}</h1>

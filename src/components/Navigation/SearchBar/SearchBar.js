@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 import Loader from '../../../components/Loader/Loader';
 import Image from '../../../hoc/Image/Image';
 import noPoster from '../../../assets/no_poster.jpg';
+import noProfile from '../../../assets/no_profile.png';
 
 import { getSearchTV } from '../../../actions/Tv';
 import { getSearchMovies } from '../../../actions/Movie';
+import { getSearchPersons } from '../../../actions/Person';
 
 import classes from './SearchBar.css';
 
@@ -18,7 +20,8 @@ class SearchBar extends Component {
         showResults: false,
         loading: false,
         movies: [],
-        tv: []
+        tv: [],
+        persons: []
     }
 
     componentDidMount() {
@@ -57,13 +60,14 @@ class SearchBar extends Component {
     
             const p1 = this.props.getSearchMovies(this.state.searchQuery);
             const p2 = this.props.getSearchTV(this.state.searchQuery);
-            // const p3 = this.props.getSearchPersons();
+            const p3 = this.props.getSearchPersons(this.state.searchQuery);
     
-            Promise.all([p1, p2]).then(results => {
+            Promise.all([p1, p2, p3]).then(results => {
                 this.setState({
                     loading: false,
                     movies: results[0],
-                    tv: results[1]
+                    tv: results[1],
+                    persons: results[2]
                 })
             })
 
@@ -94,7 +98,7 @@ class SearchBar extends Component {
     }
 
     render() {
-        const { show, searchQuery, showResults, movies, tv } = this.state;
+        const { show, searchQuery, showResults, movies, tv, persons } = this.state;
 
         const searchIcon = {
             transition: 'all 500ms'
@@ -116,7 +120,7 @@ class SearchBar extends Component {
         if(showResults) {
             resultsStyle = {
                 display: 'initial',
-                transform: 'translate(-200px,'+this.refs.searchInput.offsetHeight+'px)',
+                transform: 'translate(-230px,'+this.refs.searchInput.offsetHeight+'px)',
                 width: this.refs.searchInput.offsetWidth+200
             }
         }
@@ -124,7 +128,7 @@ class SearchBar extends Component {
         if(show) {
             searchDiv.width = '20vw';
             searchDiv.opacity = '1';
-            searchDiv.border = '1px solid #c20114';
+            searchDiv.border = '1px solid var(--red)';
             searchIcon.display = 'none';
             if(searchQuery !== '') cancelStyle.display = 'flex';
         }
@@ -139,7 +143,7 @@ class SearchBar extends Component {
         if(movies) {
             showMovies = movies.map((item,i) => {
                 return (
-                    <Link key={i} to={"/movie/" + item.id} className={classes.Movie} onClick={this.resetSearchBar}>
+                    <Link key={i} to={"/movie/" + item.id} className={classes.Item} onClick={this.resetSearchBar}>
                         <Image src={['https://image.tmdb.org/t/p/w200/',item.poster_path].join('')} default={noPoster} alt="" />
                         <div>
                             <p className={classes.Original}>{item.original_title}</p>
@@ -154,10 +158,24 @@ class SearchBar extends Component {
         if(movies) {
             showTV = tv.map((item,i) => {
                 return (
-                    <Link key={i} to={"/tv/" + item.id} className={classes.Tv} onClick={this.resetSearchBar} >
+                    <Link key={i} to={"/tv/" + item.id} className={classes.Item} onClick={this.resetSearchBar} >
                         <Image src={['https://image.tmdb.org/t/p/w200/',item.poster_path].join('')} default={noPoster} alt="" />
                         <div>
                             <p className={classes.Original}>{item.original_name}</p>
+                            <p className={classes.Translated}>{item.name}</p>
+                        </div>
+                    </Link>
+                )
+            })
+        }
+
+        let showPersons = [];
+        if(persons) {
+            showPersons = persons.map((item,i) => {
+                return (
+                    <Link key={i} to={"/person/" + item.id} className={classes.Item} onClick={this.resetSearchBar} >
+                        <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
+                        <div>
                             <p className={classes.Translated}>{item.name}</p>
                         </div>
                     </Link>
@@ -183,6 +201,7 @@ class SearchBar extends Component {
                 </div>
                 <div className={classes.Results} style={resultsStyle} >
                     {this.state.loading ? <Loader /> :
+                        <div className={classes.hideScroll}>
                         <div>
                             <h2>Filmy</h2>
                             <div className={classes.ResultsContainer}>
@@ -193,6 +212,10 @@ class SearchBar extends Component {
                                 {showTV}
                             </div>
                             <h2>Postacie</h2>
+                            <div className={classes.ResultsContainer}>
+                                {showPersons}
+                            </div>
+                        </div>
                         </div>
                     }
                 </div>
@@ -201,4 +224,4 @@ class SearchBar extends Component {
     }
 }
 
-export default connect(null, { getSearchMovies, getSearchTV })(SearchBar);
+export default connect(null, { getSearchMovies, getSearchTV, getSearchPersons })(SearchBar);

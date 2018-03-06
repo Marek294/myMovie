@@ -25,7 +25,7 @@ const Similar = (props) => {
 
     return (
         <div className={classes.Container}>
-            {similar}
+            {similar.length > 0 ? similar : <h1 className={classes.Empty}>Brak pozycji</h1>}
         </div>
     );
 };

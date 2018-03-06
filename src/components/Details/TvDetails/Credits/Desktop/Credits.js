@@ -10,13 +10,11 @@ import classes from './Credits.css';
 const Credits = (props) => {
     const created_by = props.created_by.map((item,i) => {
         return (
-            <Link key={i} to={"/person/" + item.id} >
-                <div key={i} className={classes.Item}>
-                    <div className={classes.ImageContainer}>
-                        <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
-                    </div>
-                    <p>{item.name}</p>
+            <Link key={i} to={"/person/" + item.id} className={classes.Item}>
+                <div className={classes.ImageContainer}>
+                    <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" shadow/>
                 </div>
+                <p>{item.name}</p>
             </Link>
         )
     })
@@ -24,28 +22,24 @@ const Credits = (props) => {
     let cast = _.orderBy(props.credits.cast, ['order'], ['asc']);
     cast = cast.map((item,i) => {
         return (
-            <Link key={i} to={"/person/" + item.id} >
-                <div key={i} className={classes.Item}>
-                    <div className={classes.ImageContainer}>
-                        <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
-                    </div>
-                    <p>{item.name}</p>
-                    <p style={{fontWeight: 'normal'}}>{item.character}</p>
+            <Link key={i} to={"/person/" + item.id} className={classes.Item}>
+                <div className={classes.ImageContainer}>
+                    <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" shadow/>
                 </div>
+                <p>{item.name}</p>
+                <p style={{fontWeight: 'normal'}}>{item.character}</p>
             </Link>
         )
     })
 
     const crew = props.credits.crew.map((item,i) => {
         return (
-            <Link key={i} to={"/person/" + item.id} >
-                <div key={i} className={classes.Item}>
-                    <div className={classes.ImageContainer}>
-                        <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" />
-                    </div>
-                    <p>{item.name}</p>
-                    <p style={{fontWeight: 'normal'}}>{item.job}</p>
+            <Link key={i} to={"/person/" + item.id} className={classes.Item}>
+                <div className={classes.ImageContainer}>
+                    <Image src={['https://image.tmdb.org/t/p/w200/',item.profile_path].join('')} default={noProfile} alt="" shadow/>
                 </div>
+                <p>{item.name}</p>
+                <p style={{fontWeight: 'normal'}}>{item.job}</p>
             </Link>
         )
     })

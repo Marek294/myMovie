@@ -3,14 +3,13 @@
     display: flex;
     width: 70%;
     padding-bottom: 1vw;
-    border-bottom: 1px solid #c20114;
+    border-bottom: 1px solid var(--red);
 }
 
 .Item img {
-    box-shadow: 0 0 10px black;
-    border-radius: 0.7vw;
-    width: 10vw;
-    height: calc(10vw * 1.5);
+    --width: 10vw;
+    width: var(--width);
+    height: calc(var(--width) * 1.5);
 }
 
 .Info {

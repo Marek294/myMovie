@@ -2,6 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import 'moment/min/locales';
 
+import Image from '../../../../../hoc/Image/Image';
+import noProfile from '../../../../../assets/no_profile.png';
 import classes from './TopSection.css';
 
 const TopSection = (props) => {
@@ -13,7 +15,7 @@ const TopSection = (props) => {
                 <div className={classes.Overlay}/>
             </div>
             <div className={classes.Details}>
-                <img src={['https://image.tmdb.org/t/p/original',props.profile_path].join('')} alt="" />
+                <Image src={['https://image.tmdb.org/t/p/original/',props.profile_path].join('')} default={noProfile} alt="" shadow/>
                 <div className={classes.Info}>
                     <h2>{props.name}</h2>
                     {props.birthday && 

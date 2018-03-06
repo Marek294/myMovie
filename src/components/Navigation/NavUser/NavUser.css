@@ -8,20 +8,20 @@
     border-radius: 50%;
     width: 3vw;
     height: 3vw;
-    border: 2px solid #c20114;
+    border: 2px solid var(--red);
 }
 
 .User i {
     margin-left: 0.5vw;
     font-size: 1.5vw;
-    color: #c20114;
+    color: var(--red);
 }
 
 @media (max-width: 500px) {
     .User img {
         height: 40px;
         width: 40px;
-        border: 1px solid #c20114;
+        border: 1px solid var(--red);
     }
 
     .User i {

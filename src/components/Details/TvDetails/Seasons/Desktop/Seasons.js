@@ -15,7 +15,7 @@ const Seasons = (props) => {
         const wasPerformed = moment().isAfter(item.air_date);
         return (
             <div key={i} className={classes.Item}>
-                <Image src={['https://image.tmdb.org/t/p/w200/',item.poster_path].join('')} default={noPoster} alt="" />
+                <Image src={['https://image.tmdb.org/t/p/w200/',item.poster_path].join('')} default={noPoster} alt="" shadow />
                 <div className={classes.Info}>
                     <h1>Sezon {item.season_number}</h1>
                     <div className={classes.YearAndEpisodeCount}>

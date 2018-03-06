@@ -9,7 +9,7 @@
 .SearchBar i {
     margin-right: 0.5vw;
     font-size: 2vw;
-    color: #c20114;
+    color: var(--red);
 }
 
 .Search {
@@ -36,7 +36,7 @@
     background: transparent;
     border: none;
     right: 0.5vw;
-    color: #c20114;
+    color: var(--red);
 }
 
 .Search button:active {
@@ -51,10 +51,16 @@
 .SearchBar .Results {
     position: absolute;
     height: 400px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     background: black;
     padding: 20px;
+}
+
+.SearchBar .Results .hideScroll {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-right: 50px;
 }
 
 .SearchBar h2 {
@@ -62,7 +68,7 @@
     width: 60%;
     margin: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #c20114;
+    border-bottom: 1px solid var(--red)
 }
 
 .SearchBar .ResultsContainer {
@@ -70,16 +76,14 @@
     flex-direction: column;
 }
 
-.SearchBar .ResultsContainer .Movie div,
-.SearchBar .ResultsContainer .Tv div {
+.SearchBar .ResultsContainer .Item div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 20px;
 }
 
-.SearchBar .ResultsContainer .Movie p,
-.SearchBar .ResultsContainer .Tv p {
+.SearchBar .ResultsContainer .Item p {
     text-align: left;
 }
 
@@ -91,8 +95,7 @@
     font-size: 1vw;
 }
 
-.SearchBar .ResultsContainer .Movie,
-.SearchBar .ResultsContainer .Tv {
+.SearchBar .ResultsContainer .Item {
     color: white;
     text-decoration: none;
     display: flex;
@@ -106,8 +109,7 @@
     height: calc(75px*1.5);
 }
 
-.SearchBar .ResultsContainer .Movie:hover,
-.SearchBar .ResultsContainer .Tv:hover {
+.SearchBar .ResultsContainer .Item:hover {
     cursor: pointer;
-    border: 1px solid #c20114;
+    border: 1px solid var(--red);
 }

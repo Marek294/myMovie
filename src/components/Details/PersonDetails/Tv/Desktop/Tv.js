@@ -12,17 +12,15 @@ const Tv = (props) => {
 
     tv_cast = tv_cast.map((item,i) => {
         return (
-            <Link key={i} to={"/tv/" + item.id} >
-                <div className={classes.Item}>
-                    <div className={classes.ImageContainer}>
-                        <Image src={['https://image.tmdb.org/t/p/w200/',item.poster_path].join('')} default={noPoster} alt="" />
-                    </div>
-                    <div className={classes.Overlay}>
-                        <div className={classes.Description}>
-                            <h2>{item.original_name}</h2>
-                            <h1>{item.name}</h1>
-                            {item.character && <p>jako {item.character}</p>}
-                        </div>
+            <Link key={i} to={"/tv/" + item.id} className={classes.Item}>
+                <div className={classes.ImageContainer}>
+                    <Image src={['https://image.tmdb.org/t/p/w200/',item.poster_path].join('')} default={noPoster} alt="" />
+                </div>
+                <div className={classes.Overlay}>
+                    <div className={classes.Description}>
+                        <h2>{item.original_name}</h2>
+                        <h1>{item.name}</h1>
+                        {item.character && <p>jako {item.character}</p>}
                     </div>
                 </div>
             </Link>
@@ -33,17 +31,15 @@ const Tv = (props) => {
 
     tv_crew = tv_crew.map((item,i) => {
         return (
-            <Link key={i} to={"/tv/" + item.id} >
-                <div className={classes.Item}>
-                    <div className={classes.ImageContainer}>
-                        <Image src={['https://image.tmdb.org/t/p/w200/',item.poster_path].join('')} default={noPoster} alt="" />
-                    </div>
-                    <div className={classes.Overlay}>
-                        <div className={classes.Description}>
-                            <h2>{item.original_name}</h2>
-                            <h1>{item.name}</h1>
-                            <p>{item.job}</p>
-                        </div>
+            <Link key={i} to={"/tv/" + item.id} className={classes.Item}>
+                <div className={classes.ImageContainer}>
+                    <Image src={['https://image.tmdb.org/t/p/w200/',item.poster_path].join('')} default={noPoster} alt="" />
+                </div>
+                <div className={classes.Overlay}>
+                    <div className={classes.Description}>
+                        <h2>{item.original_name}</h2>
+                        <h1>{item.name}</h1>
+                        <p>{item.job}</p>
                     </div>
                 </div>
             </Link>
