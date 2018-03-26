@@ -54,6 +54,12 @@
     font-size: 20px;
 }
 
+.LogoOnMiddle {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
 @media (max-width: 499px) {
     .NavBar {
         position: relative;

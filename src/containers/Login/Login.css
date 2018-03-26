@@ -1,0 +1,116 @@
+.Login {
+    width: 30%;
+    padding: 50px;
+    border-radius: 5px;
+    border: 3px solid var(--blue);
+    animation: fadeIn 1000ms ease-in-out;
+}
+
+.Login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Login form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.Login label {
+    color: white;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.Login input {
+    margin: 5px 0px 10px 0px;
+    font-size: 15px;
+    padding: 7px;
+    border: none;
+    border-bottom: 3px solid white;
+    background: transparent;
+    color: white;
+    transition: all 500ms;
+}
+
+.Login input:focus {
+    border-bottom: 3px solid var(--blue);
+}
+
+.Login button {
+    margin: 0px auto;
+    font-size: 20px;
+    width: 80px;
+    color: white;
+    border: none;
+    background: transparent;
+    padding: 0;
+    transition: all 500ms;
+}
+
+.Login button:hover {
+    cursor: pointer;
+    color: var(--blue);
+}
+
+.Login button:active {
+    padding: 0;
+}
+
+.Login .forgotAndSignup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.Login a {
+    text-decoration: none;
+    color: white;
+    transition: all 500ms;
+}
+
+.Login a:hover {
+    color: var(--blue)
+}
+
+.Login .Error {
+    border-bottom: 3px solid var(--red);
+}
+
+.Login .errorMessage {
+    color: white;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.Login .global {
+    text-align: center !important;
+}
+
+.Login .noErrorMessage {
+    opacity: 0;
+    height: 25px;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1
+    }
+}

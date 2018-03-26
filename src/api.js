@@ -8,6 +8,11 @@ const instance = axios.create({
     }
 })
 
+const backend = axios.create({
+    //baseURL: 'https://my-movie-server.herokuapp.com',
+    baseURL: 'http://localhost:5000'
+})
+
 export default {
     TV: {
         getTopRated: () => instance.get('discover/tv?sort_by=vote_average.desc&page=1&vote_count.gte=500').then(res => res.data.results),
@@ -25,5 +30,8 @@ export default {
     Person: {
         getPersonDetails: (id) => instance.get(`/person/${id}?append_to_response=movie_credits%2Ctv_credits%2Cimages`).then(res => res.data),
         getSearchPersons: (query) => instance.get(`/search/person?query=${query}`).then(res => res.data.results)
+    },
+    User: {
+        login: (data) => backend.post('/auth', data).then(res => res.data)
     }
 }
