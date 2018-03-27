@@ -2,6 +2,10 @@
     width: 10vw;
 }
 
+.Logo a:active {
+    outline: 0;
+}
+
 @media (max-width: 499px) {
     .Logo {
         padding: 10px 0px;

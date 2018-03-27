@@ -6,7 +6,7 @@ import ReactAux from '../../../hoc/ReactAux';
 
 import classes from './SideDrawer.css';
 
-const sideDrawer = (props) => {
+const SideDrawer = (props) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
     if (props.open) {
         attachedClasses = [classes.SideDrawer, classes.Open];
@@ -18,15 +18,15 @@ const sideDrawer = (props) => {
             <div className={attachedClasses.join(' ')}>
                 <div className={classes.User}>
                     <NavUser />
-                    <p>example@gmail.com</p>
+                    <p>{props.email}</p>
                 </div>
                 <div className={classes.border} />
                 <div className={classes.NavigationItems} >
-                    <NavigationItems sideDrawer/>
+                    <NavigationItems sideDrawer logout={props.logout} />
                 </div>
             </div>
         </ReactAux>
     );
 };
 
-export default sideDrawer;
+export default SideDrawer;

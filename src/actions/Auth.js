@@ -18,3 +18,11 @@ export const login = (data) => dispatch => {
         return dispatch(userLoggedIn(user));
     })
 }
+
+export const logout = () => dispatch => {
+    localStorage.removeItem('myMovieJWT');
+    setAuthorizationToken();
+    return dispatch(userLoggedOut());
+}
+
+export const sendConfirmationEmail = () => () => api.User.sendConfirmationEmail();

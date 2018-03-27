@@ -1,6 +1,10 @@
 .User {
     margin-left: 0.5vw;
     display: flex;
+}
+
+.User .Icon {
+    display: flex;
     align-items: center;
 }
 
@@ -8,20 +12,53 @@
     border-radius: 50%;
     width: 3vw;
     height: 3vw;
-    border: 2px solid var(--red);
+    border: 2px solid white;
 }
 
 .User i {
     margin-left: 0.5vw;
     font-size: 1.5vw;
-    color: var(--red);
+    color: white;
+}
+
+.User .Menu {
+    position: absolute;
+    overflow: hidden;
+    background: black;
+    border: 1px solid white;
+    border-top: 5px solid white;
+    z-index: 500;
+}
+
+.User .Menu .MenuLink {
+    text-decoration: none;
+}
+
+.User .Menu .MenuLink:active {
+    outline: 0;
+}
+
+.User .Menu .MenuText {
+    color: white;
+    text-align: right;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 20px;
+}
+
+.User .Menu .Email {
+    font-size: 15px;
+    border-bottom: 1px solid white;
+    margin: 0;
+    padding: 10px 5px;
+    width: 100%;
 }
 
 @media (max-width: 500px) {
     .User img {
         height: 40px;
         width: 40px;
-        border: 1px solid var(--red);
+        border: 1px solid white;
     }
 
     .User i {

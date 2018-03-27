@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 import validator from 'validator';
 
-import { login } from '../../actions/Auth';
+import { signup } from '../../actions/User';
 
-import classes from './Login.css';
+import classes from './Signup.css';
 
-class Login extends Component {
+class Signup extends Component {
     state = {
         email: '',
         password: '',
+        confirmPassword: '',
         errors: {}
     }
 
@@ -32,7 +32,7 @@ class Login extends Component {
         const errors = this.validateLogin(this.state);
         if(Object.keys(errors).length > 0) this.setState({ errors });
         else {
-            this.props.login(this.state)
+            this.props.signup(this.state)
                 .catch(err => {
                     const { errors } = err.response.data;
                     this.setState({
@@ -49,15 +49,16 @@ class Login extends Component {
 
         if(!validator.isEmail(data.email)) errors.email = "Wprowadź email";
         if(validator.isEmpty(data.password)) errors.password = "Podaj hasło";
+        if(data.password !== data.confirmPassword) errors.confirmPassword = "Hasła muszą sie powtarzać"
 
         return errors;
     }
 
     render() {
-        const { email, password, errors } = this.state;
+        const { email, password, confirmPassword, errors } = this.state;
 
         return (
-            <div className={classes.Login} >
+            <div className={classes.Signup} >
                 <form onSubmit={this.onSubmit} noValidate>
                     <div>
                         <label htmlFor='email'>Email</label>
@@ -69,16 +70,20 @@ class Login extends Component {
                         <input className={classnames(errors.password && classes.Error)} type='password' name='password' id='password' value={password} onChange={this.onChange}/>
                         <p className={classnames(errors.password ? classes.errorMessage : classes.noErrorMessage)}>{errors.password}</p>
                     </div>
+                    <div>
+                        <label htmlFor='confirmPassword'>Potwierdź hasło</label>
+                        <input className={classnames(errors.confirmPassword && classes.Error)} type='password' name='confirmPassword' id='confirmPassword' value={confirmPassword} onChange={this.onChange}/>
+                        <p className={classnames(errors.confirmPassword ? classes.errorMessage : classes.noErrorMessage)}>{errors.confirmPassword}</p>
+                    </div>
                     <p className={classnames(errors.global ? [classes.errorMessage, classes.global].join(' ') : classes.noErrorMessage)}>{errors.global}</p>
-                    <button type='submit'>Zaloguj</button>
+                    <button type='submit'>Rejestracja</button>
                 </form>
-                <div className={classes.forgotAndSignup}>
-                    <Link to="/forgotPassword">Zapomniane hasło</Link>
-                    <a onClick={this.props.showSignup} >Rejestracja</a>
+                <div className={classes.login}>
+                    <a onClick={this.props.showLogin} >Logowanie</a>
                 </div>
             </div>
         );
     }
 }
 
-export default connect(null, { login })(Login);
+export default connect(null, { signup })(Signup);

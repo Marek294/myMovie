@@ -1,0 +1,38 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+.ConfirmEmail {
+    width: 30%;
+    padding: 50px;
+    border-radius: 5px;
+    border: 3px solid var(--blue);
+}
+
+.ConfirmEmail h1 {
+    font-size: 20px;
+}
+
+.ConfirmEmail button {
+    border: 3px solid var(--blue);
+    background: transparent;
+    padding: 10px;
+    color: white;
+}
+
+.ConfirmEmail button:hover {
+    cursor: pointer;
+}
+
+.ConfirmEmail button:focus {
+    padding: 10px;
+}
+
+.ConfirmEmail .Buttons {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}

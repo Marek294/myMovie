@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Login from '../../Login/Login';
+
+import classes from './Mobile.css';
 
 class Mobile extends Component {
     render() {
         return (
-            <div>
-                
+            <div className={classes.Container}>
+                <Login />
             </div>
         );
     }

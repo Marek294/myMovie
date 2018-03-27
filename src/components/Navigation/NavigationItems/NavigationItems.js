@@ -27,7 +27,7 @@ class NavigationItems extends Component {
                     <ReactAux>
                         <NavigationItem click={() => this.clickHandle('search')} name='search' active={active} >Szukaj</NavigationItem>
                         <NavigationItem click={() => this.clickHandle('settings')} name='settings' active={active} >Ustawienia</NavigationItem>
-                        <NavigationItem click={() => this.clickHandle('logout')} name='logout' active={active} >Wyloguj</NavigationItem>
+                        <NavigationItem click={this.props.logout} name='logout' active={active} >Wyloguj</NavigationItem>
                     </ReactAux>
                 }
             </ul>

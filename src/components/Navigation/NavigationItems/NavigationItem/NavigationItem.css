@@ -37,6 +37,12 @@
     .NavItem a {
         font-size: 15px;
         text-align: center;
+        color: white;
+    }
+
+    .NavItem a:hover {
+        cursor: pointer;
+        color: var(--red);
     }
 
     .NavItem .border {

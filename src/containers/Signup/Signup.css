@@ -1,4 +1,4 @@
-.Login {
+.Signup {
     width: 30%;
     padding: 50px;
     border-radius: 5px;
@@ -6,24 +6,24 @@
     animation: fadeIn 1000ms ease-in-out;
 }
 
-.Login form {
+.Signup form {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.Login form div {
+.Signup form div {
     display: flex;
     flex-direction: column;
 }
 
-.Login label {
+.Signup label {
     color: white;
     margin-left: 20px;
     font-size: 20px;
 }
 
-.Login input {
+.Signup input {
     margin: 5px 0px 10px 0px;
     font-size: 15px;
     padding: 7px;
@@ -34,11 +34,11 @@
     transition: all 500ms;
 }
 
-.Login input:focus {
+.Signup input:focus {
     border-bottom: 3px solid var(--blue);
 }
 
-.Login button {
+.Signup button {
     margin: 0px auto;
     font-size: 20px;
     width: 80px;
@@ -49,47 +49,51 @@
     transition: all 500ms;
 }
 
-.Login button:hover {
+.Signup button:hover {
     cursor: pointer;
     color: var(--blue);
 }
 
-.Login button:active {
+.Signup button:active {
     padding: 0;
 }
 
-.Login .forgotAndSignup {
+.Signup .login {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-top: 20px;
 }
 
-.Login a {
+.Signup a {
     text-decoration: none;
     color: white;
     transition: all 500ms;
 }
 
-.Login a:hover {
+.Signup a:hover {
     cursor: pointer;
     color: var(--blue)
 }
 
-.Login .Error {
+.Signup a:active {
+    outline: 0;
+}
+
+.Signup .Error {
     border-bottom: 3px solid var(--red);
 }
 
-.Login .errorMessage {
+.Signup .errorMessage {
     color: white;
     text-align: left;
     margin-bottom: 10px;
 }
 
-.Login .global {
+.Signup .global {
     text-align: center !important;
 }
 
-.Login .noErrorMessage {
+.Signup .noErrorMessage {
     opacity: 0;
     height: 25px;
 }
@@ -117,7 +121,7 @@
 }
 
 @media (max-width: 499px) {
-    .Login {
+    .Signup {
         width: 90%;
         padding: 20px;
         border: none;

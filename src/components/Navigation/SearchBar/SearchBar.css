@@ -9,7 +9,7 @@
 .SearchBar i {
     margin-right: 0.5vw;
     font-size: 2vw;
-    color: var(--red);
+    color: white;
 }
 
 .Search {
@@ -36,7 +36,7 @@
     background: transparent;
     border: none;
     right: 0.5vw;
-    color: var(--red);
+    color: white;
 }
 
 .Search button:active {
@@ -54,6 +54,8 @@
     overflow: hidden;
     background: black;
     padding: 20px;
+    border: 1px solid white;
+    border-top: 5px solid white;
 }
 
 .SearchBar .Results .hideScroll {
@@ -68,7 +70,7 @@
     width: 60%;
     margin: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--red)
+    border-bottom: 1px solid white
 }
 
 .SearchBar .ResultsContainer {
@@ -111,5 +113,5 @@
 
 .SearchBar .ResultsContainer .Item:hover {
     cursor: pointer;
-    border: 1px solid var(--red);
+    border: 1px solid white;
 }

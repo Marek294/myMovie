@@ -120,7 +120,7 @@ class SearchBar extends Component {
         if(showResults) {
             resultsStyle = {
                 display: 'initial',
-                transform: 'translate(-230px,'+this.refs.searchInput.offsetHeight+'px)',
+                transform: 'translate(-230px,'+(this.refs.searchInput.offsetHeight+10)+'px)',
                 width: this.refs.searchInput.offsetWidth+200
             }
         }
@@ -128,7 +128,7 @@ class SearchBar extends Component {
         if(show) {
             searchDiv.width = '20vw';
             searchDiv.opacity = '1';
-            searchDiv.border = '1px solid var(--red)';
+            searchDiv.border = '1px solid white';
             searchIcon.display = 'none';
             if(searchQuery !== '') cancelStyle.display = 'flex';
         }

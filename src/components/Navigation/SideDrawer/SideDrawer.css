@@ -9,12 +9,12 @@
     background-color: black;
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
-    border-right: 1px solid var(--red);
+    border-right: 1px solid white;
 }
 
 .SideDrawer .border {
     width: 100%;
-    border-bottom: 1px solid var(--red);
+    border-bottom: 1px solid white;
 }
 
 @media (min-width: 500px) {

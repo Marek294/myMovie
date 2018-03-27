@@ -4,13 +4,18 @@ const instance = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     params: {
         'api_key': '3e85db7ef753fb8345cc8be646827745',
-        'language': 'pl'
-    }
+        'language': 'pl',
+    },
 })
 
+instance.interceptors.request.use(function (config) {
+    delete config.headers.common['AuthorizationToken'];
+    return config;
+});
+
 const backend = axios.create({
-    //baseURL: 'https://my-movie-server.herokuapp.com',
-    baseURL: 'http://localhost:5000'
+    // baseURL: 'https://my-movie-server.herokuapp.com',
+    baseURL: 'http://localhost:5000',
 })
 
 export default {
@@ -32,6 +37,8 @@ export default {
         getSearchPersons: (query) => instance.get(`/search/person?query=${query}`).then(res => res.data.results)
     },
     User: {
-        login: (data) => backend.post('/auth', data).then(res => res.data)
+        login: (data) => backend.post('/auth', data).then(res => res.data),
+        signup: (data) => backend.post('/users', data).then(res => res.data),
+        sendConfirmationEmail: () => backend.post('/auth/sendConfirmationEmail').then(res => res.data)
     }
 }
