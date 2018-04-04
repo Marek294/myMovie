@@ -5,34 +5,36 @@
     height: 95vh;
 }
 
-.ConfirmEmail {
+.Confirmation {
     width: 30%;
     padding: 50px;
     border-radius: 5px;
     border: 3px solid var(--blue);
 }
 
-.ConfirmEmail h1 {
+.Confirmation h1 {
     font-size: 20px;
+    text-align: center;
 }
 
-.ConfirmEmail button {
+.Confirmation a {
     border: 3px solid var(--blue);
     background: transparent;
     padding: 10px;
     color: white;
+    text-decoration: none;
 }
 
-.ConfirmEmail button:hover {
+.Confirmation a:hover {
     cursor: pointer;
 }
 
-.ConfirmEmail button:focus {
+.Confirmation a:focus {
     padding: 10px;
 }
 
-.ConfirmEmail .Buttons {
+.Confirmation .Buttons {
     margin: 20px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }

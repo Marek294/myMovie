@@ -14,8 +14,7 @@ instance.interceptors.request.use(function (config) {
 });
 
 const backend = axios.create({
-    // baseURL: 'https://my-movie-server.herokuapp.com',
-    baseURL: 'http://localhost:5000',
+    baseURL: process.env.NODE_ENV ==='production' ? 'https://my-movie-server.herokuapp.com' : 'http://localhost:5000',
 })
 
 export default {
@@ -39,6 +38,9 @@ export default {
     User: {
         login: (data) => backend.post('/auth', data).then(res => res.data),
         signup: (data) => backend.post('/users', data).then(res => res.data),
-        sendConfirmationEmail: () => backend.post('/auth/sendConfirmationEmail').then(res => res.data)
+        sendConfirmationEmail: () => backend.post('/auth/sendConfirmationEmail').then(res => res.data),
+        confirmEmail: (confirmationToken) => backend.post('/auth/confirmation', { confirmationToken }).then(res => res.data),
+        resetPasswordRequest: (data) => backend.post('/auth/resetPasswordRequest', data).then(res => res.data),
+        resetPassword: (data) => backend.post('/auth/resetPassword', data).then(res => res.data)
     }
 }

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logout, sendConfirmationEmail } from '../../actions/Auth';
+import Spinner from '../../components/Loader/Spinner';
 
-import classes from './ConfirmEmail.css';
+import classes from './ConfirmEmailMessage.css';
 
 class ConfirmEmail extends Component {
     state = {
         status: '',
-        errors: {}
+        errors: {},
+        loading: false
     }
 
     logout = () => {
@@ -15,24 +17,31 @@ class ConfirmEmail extends Component {
     }
 
     sendConfirmationEmail = () => {
+        this.setState({
+            loading: true
+        })
+
         this.props.sendConfirmationEmail().then(data => {
             this.setState({
                 status: data.status,
-                errors: {}
+                errors: {},
+                loading: false
             })
         })
         .catch(err => {
             const { errors } = err.response.data;
+            console.log(err);
 
             this.setState({
                 status: '',
-                errors
+                errors,
+                loading: false
             })
         })
     }
 
     render() {
-        const { status, errors } = this.state;
+        const { status, errors, loading } = this.state;
         return (
             <div className={classes.Container} >
                 <div className={classes.ConfirmEmail}>
@@ -41,8 +50,11 @@ class ConfirmEmail extends Component {
                         <button onClick={this.sendConfirmationEmail}>Wyślij email potwierdzający</button>
                         <button onClick={this.logout}>Wyloguj</button>
                     </div>
-                    {status && <p>{status}</p>}
-                    {errors.global && <p>{errors.global}</p>}
+                    <div className={classes.ErrorAndLoaderContainer} > 
+                        {loading ? <Spinner size='30' /> :
+                            status ? <p>{status}</p> :
+                            errors.global && <p>{errors.global}</p> }
+                    </div>
                 </div>
             </div>
         );

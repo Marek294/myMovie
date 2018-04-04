@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 import validator from 'validator';
+import Spinner from '../../components/Loader/Spinner';
 
 import { login } from '../../actions/Auth';
 
@@ -12,7 +13,8 @@ class Login extends Component {
     state = {
         email: '',
         password: '',
-        errors: {}
+        errors: {},
+        loading: false
     }
 
     onChange = (e) => {
@@ -29,16 +31,21 @@ class Login extends Component {
     onSubmit = (e) => {
         e.preventDefault();
 
+        this.setState({
+            loading: true
+        })
+
         const errors = this.validateLogin(this.state);
-        if(Object.keys(errors).length > 0) this.setState({ errors });
+        if(Object.keys(errors).length > 0) this.setState({ errors, loading: false });
         else {
             this.props.login(this.state)
                 .catch(err => {
                     const { errors } = err.response.data;
                     this.setState({
                         errors: {
-                            global: errors.global
-                        }
+                            global: errors.global,
+                        },
+                        loading: false
                     })
                 })
         }
@@ -54,7 +61,7 @@ class Login extends Component {
     }
 
     render() {
-        const { email, password, errors } = this.state;
+        const { email, password, errors, loading } = this.state;
 
         return (
             <div className={classes.Login} >
@@ -70,7 +77,7 @@ class Login extends Component {
                         <p className={classnames(errors.password ? classes.errorMessage : classes.noErrorMessage)}>{errors.password}</p>
                     </div>
                     <p className={classnames(errors.global ? [classes.errorMessage, classes.global].join(' ') : classes.noErrorMessage)}>{errors.global}</p>
-                    <button type='submit'>Zaloguj</button>
+                    { loading ? <Spinner size='30' /> : <button type='submit'>Zaloguj</button> }
                 </form>
                 <div className={classes.forgotAndSignup}>
                     <Link to="/forgotPassword">Zapomniane hasło</Link>

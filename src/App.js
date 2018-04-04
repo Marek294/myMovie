@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import Layout from './components/Layout/Layout';
@@ -9,7 +9,10 @@ import Browse from './containers/Browse/Browse';
 import MovieDetails from './containers/Movie/MovieDetails/MovieDetails';
 import TvDetails from './containers/Tv/TvDetails/TvDetails';
 import PersonDetails from './containers/Person/PersonDetails';
-import ConfirmEmail from './components/ConfirmEmail/ConfirmEmail';
+import ConfirmEmailMessage from './containers/ConfirmEmailMessage/ConfirmEmailMessage';
+import Confirmation from './containers/Confirmation/Confirmation';
+import ResetPasswordRequest from './containers/ResetPasswordRequest/ResetPasswordRequest';
+import ResetPassword from './containers/ResetPassword/ResetPassword';
 
 import GuestRoute from './routes/GuestRoute';
 import UserRoute from './routes/UserRoute';
@@ -22,7 +25,10 @@ class App extends Component {
         <Layout>
           <Switch>
             <GuestRoute path="/" exact component={HomePage} />
-            <UserRoute path="/confirm" exact component={ConfirmEmail} />
+            <Route path="/confirmation/:confirmationToken" exact component={Confirmation} />
+            <GuestRoute path="/forgotPassword" exact component={ResetPasswordRequest} />
+            <GuestRoute path="/resetPassword/:token" exact component={ResetPassword} />
+            <UserRoute path="/confirm" exact component={ConfirmEmailMessage} />
             <UserRoute path="/browse" exact component={Browse} />
             <UserRoute path="/movie/:id" exact component={MovieDetails} />
             <UserRoute path="/tv/:id" exact component={TvDetails} />
