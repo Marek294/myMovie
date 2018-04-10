@@ -38,3 +38,11 @@
     display: flex;
     justify-content: center;
 }
+
+@media (max-width: 499px) {
+    .Confirmation {
+        width: 90%;
+        padding: 20px;
+        border: none;
+    }
+}

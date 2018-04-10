@@ -32,7 +32,7 @@ class HomePage extends Component {
                         <Desktop isLogin={isLogin} showSignup={this.showSignup} showLogin={this.showLogin} />
                     </div>
                     <div className={classes.MobileOnly}>
-                        <Mobile isLogin={isLogin} />
+                        <Mobile isLogin={isLogin} showSignup={this.showSignup} showLogin={this.showLogin} />
                     </div>
                 </ReactAux>
             </div>

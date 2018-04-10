@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Login from '../../Login/Login';
+import Signup from '../../Signup/Signup';
 
 import classes from './Mobile.css';
 
-class Mobile extends Component {
-    render() {
-        return (
-            <div className={classes.Container}>
-                <Login />
+const Mobile = (props) => {
+    return (
+        <div className={classes.Container}>
+                {props.isLogin ? <Login showSignup={props.showSignup} /> : <Signup showLogin={props.showLogin} />}
             </div>
-        );
-    }
-}
+    );
+};
 
 export default Mobile;

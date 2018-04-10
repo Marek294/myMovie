@@ -44,3 +44,11 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 499px) {
+    .ConfirmEmail {
+        width: 90%;
+        padding: 20px;
+        border: none;
+    }
+}
